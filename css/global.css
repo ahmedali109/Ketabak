@@ -1,0 +1,48 @@
+body {
+    font-family: "Cairo", serif;
+}
+
+/* Anchor */
+.anchor-styling {
+    color: white;
+    text-decoration: none; 
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.anchor-styling:hover {
+    color: #f4a460;      
+}
+
+/* BUTTON */
+.btn {
+    background-color: #f4a460;
+    color: #fff;
+    padding: 3px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #e59550;
+    transform: scale(1.05);
+}
+
+
+/*LOGO*/
+
+.logo {
+    font-size: 14px;
+    font-weight: bold;
+    color: #f4a460;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Arial', sans-serif;
+    padding: 5px 10px;
+    border-radius: 4px;
+}

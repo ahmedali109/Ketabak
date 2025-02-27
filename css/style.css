@@ -1,0 +1,47 @@
+@import "global.css";
+
+
+/*start landing*/
+.landing-page{
+    min-height: 100vh;
+    background-image: url('../images/landing-1.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+.landing-page .overlay{
+    background-color: #141619b3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
+    z-index: 1;
+}
+
+.landing-page .header{
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    width: 100%;
+    height: 40px;
+    background-color:#191919;
+}
+
+.landing-page .links{
+    list-style: none; 
+    display: flex;
+    align-items: center; 
+    gap: 15px; 
+    padding: 0;
+    margin: 0;
+    
+}
+.landing-page .links li{
+    margin: 0;
+}
+
+/*end landing*/
