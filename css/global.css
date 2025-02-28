@@ -18,19 +18,21 @@ body {
 /* BUTTON */
 .btn {
     background-color: #f4a460;
-    color: #fff;
+    color: black;
     padding: 3px 10px;
     font-size: 14px;
     font-weight: bold;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: color 0.4s ease, transform 0.4s ease;
 }
 
 .btn:hover {
     background-color: #e59550;
-    transform: scale(1.05);
+    color: white;
+    transform: scale(1.04);
 }
 
 
@@ -46,3 +48,4 @@ body {
     padding: 5px 10px;
     border-radius: 4px;
 }
+
