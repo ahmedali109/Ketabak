@@ -1,3 +1,12 @@
+/* COLORS */
+
+:root{
+    --main-color:#f4a460;
+    --second-color:#191919;
+}
+
+
+
 body {
     font-family: "Cairo", serif;
 }
@@ -12,12 +21,12 @@ body {
 }
 
 .anchor-styling:hover {
-    color: #f4a460;      
+    color: var(--main-color);      
 }
 
 /* BUTTON */
 .btn {
-    background-color: #f4a460;
+    background-color: var(--main-color);
     color: black;
     padding: 3px 10px;
     font-size: 14px;
@@ -41,11 +50,18 @@ body {
 .logo {
     font-size: 14px;
     font-weight: bold;
-    color: #f4a460;
+    color: var(--main-color);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: 'Arial', sans-serif;
     padding: 5px 10px;
     border-radius: 4px;
+}
+
+/* TITLE */
+.title{
+    color: #191919;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
