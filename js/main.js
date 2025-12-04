@@ -55,3 +55,35 @@ document.addEventListener("DOMContentLoaded", () => {
     container.innerHTML = stars;
   });
 });
+
+/* Carousel/Bestseller Navigation */
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.getElementById("carousel");
+  const leftArrow = document.querySelector(".arrow.left");
+  const rightArrow = document.querySelector(".arrow.right");
+
+  function scrollCarousel(direction) {
+    if (!carousel) return;
+
+    const card = carousel.querySelector(".card");
+    if (!card) return;
+
+    const cardWidth = card.offsetWidth;
+    const gap = 20; // Adjust based on your CSS gap value
+    const scrollAmount = (cardWidth + gap) * direction;
+
+    carousel.scrollBy({
+      left: scrollAmount,
+      behavior: "smooth",
+    });
+  }
+
+  // Add click listeners to arrows
+  if (leftArrow) {
+    leftArrow.addEventListener("click", () => scrollCarousel(-1));
+  }
+
+  if (rightArrow) {
+    rightArrow.addEventListener("click", () => scrollCarousel(1));
+  }
+});
