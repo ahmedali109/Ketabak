@@ -23,6 +23,48 @@ function changeBackground() {
   };
   img.src = data.landingImgs[currentIndex];
 }
+// js/main.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateNavbarForUser();
+});
+
+function updateNavbarForUser() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    
+    const loginBtn = document.querySelector('.login-btn');
+    const headerActions = document.querySelector('.header-actions');
+
+    if (currentUser) {
+        if (loginBtn) {
+            loginBtn.remove();
+        }
+
+        const userMenuHTML = `
+            <div class="user-nav-menu">
+                <a href="pages/profile.html" class="user-profile-link">
+                    <i class="fas fa-user-circle"></i>
+                    <span>${currentUser.firstName}</span>
+                </a>
+                <button id="navLogoutBtn" class="nav-logout-btn" title="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        `;
+
+        headerActions.insertAdjacentHTML('beforeend', userMenuHTML);
+
+        const logoutBtn = document.getElementById('navLogoutBtn');
+        logoutBtn.addEventListener('click', function() {
+            const confirmLogout = confirm("Are you sure you want to logout?");
+            if (confirmLogout) {
+                localStorage.removeItem('currentUser');
+                window.location.reload();
+            }
+        });
+    }
+}
+
 
 // Start slideshow when page loads
 window.addEventListener("load", () => {
@@ -87,3 +129,37 @@ document.addEventListener("DOMContentLoaded", () => {
     rightArrow.addEventListener("click", () => scrollCarousel(1));
   }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    checkLoginStatus();
+});
+
+function checkLoginStatus() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const loginBtn = document.querySelector('.login-btn');
+    const headerActions = document.querySelector('.header-actions');
+
+    if (currentUser) {
+        if (loginBtn) {
+            loginBtn.style.display = 'none'; 
+            
+            const userMenu = document.createElement('div');
+            userMenu.className = 'user-menu';
+            userMenu.style.display = 'flex';
+            userMenu.style.alignItems = 'center';
+            userMenu.style.gap = '15px';
+            
+            userMenu.innerHTML = `
+                <span style="color: var(--main-color); font-weight: bold;">Hi, ${currentUser.firstName}</span>
+                <button id="logoutBtn" style="padding: 5px 15px; border: 1px solid #e74c3c; color: #e74c3c; background: transparent; border-radius: 20px; cursor: pointer;">Logout</button>
+            `;
+            
+            headerActions.appendChild(userMenu);
+
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                localStorage.removeItem('currentUser'); 
+                window.location.reload(); 
+            });
+        }
+    }
+}

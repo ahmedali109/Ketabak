@@ -1,3 +1,13 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  --main-color: #ee8e3a;
+  --second-color: #2c3e50;
+  --text-color: #191919;
+  --bg-color: #f8f9fa;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,189 +15,154 @@
 }
 
 body {
-  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #0a0a0a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--bg-color);
   min-height: 100vh;
-  padding: 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(
-      circle at 20% 50%,
-      rgba(120, 119, 198, 0.3) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(139, 92, 246, 0.3) 0%,
-      transparent 50%
-    );
-  animation: rotate 20s linear infinite;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* خلفية هادية متماشية مع الثيم */
+  background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('../images/landing-1.jpg'); 
+  background-size: cover;
+  background-position: center;
 }
 
 .container {
-  background: rgba(20, 20, 20, 0.8);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  background: #fff;
   padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 420px;
-  position: relative;
-  z-index: 1;
+  max-width: 450px;
+  text-align: center;
 }
 
+/* Headers */
 h1 {
-  color: #fff;
+  color: var(--second-color);
+  font-family: "Cairo", sans-serif;
   margin-bottom: 10px;
-  font-size: 32px;
-  font-weight: 700;
-  background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 2rem;
 }
 
 .subtitle {
-  color: #a1a1aa;
+  color: #666;
   margin-bottom: 30px;
-  font-size: 14px;
+  font-size: 0.95rem;
 }
 
+/* Form Groups */
 .form-group {
   margin-bottom: 20px;
+  text-align: left;
 }
 
-label {
+.form-group label {
   display: block;
   margin-bottom: 8px;
-  color: #e4e4e7;
-  font-weight: 500;
-  font-size: 14px;
+  color: var(--second-color);
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
-input[type="email"],
-input[type="password"] {
+.form-group input {
   width: 100%;
   padding: 12px 15px;
-  background: rgba(39, 39, 42, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid #e9ecef;
   border-radius: 8px;
   font-size: 14px;
-  color: #fff;
-  transition: all 0.3s;
-}
-
-input[type="email"]:focus,
-input[type="password"]:focus {
+  transition: all 0.3s ease;
   outline: none;
-  border-color: #8b5cf6;
-  background: rgba(39, 39, 42, 1);
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
 }
 
-input::placeholder {
-  color: #71717a;
+.form-group input:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 4px rgba(238, 142, 58, 0.1);
 }
 
-.remember-forgot {
+/* Name Row (For Signup) */
+.name-row {
   display: flex;
+  gap: 15px;
+}
+
+.name-row .form-group {
+  flex: 1;
+}
+
+/* Checkboxes & Links */
+.remember-forgot,
+.checkbox-group {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 25px;
+  font-size: 0.85rem;
 }
 
-.remember-me {
-  display: flex;
-  align-items: center;
+.checkbox-group {
+  justify-content: flex-start;
+  gap: 10px;
 }
 
 input[type="checkbox"] {
-  margin-right: 8px;
+  accent-color: var(--main-color);
   width: 16px;
   height: 16px;
   cursor: pointer;
-  accent-color: #8b5cf6;
 }
 
-.remember-me label {
-  margin: 0;
-  font-weight: normal;
-  cursor: pointer;
-  font-size: 14px;
-  color: #d4d4d8;
-}
-
-.forgot-password {
-  color: #a78bfa;
+a {
+  color: var(--main-color);
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s;
 }
 
-.forgot-password:hover {
-  color: #c4b5fd;
+a:hover {
+  color: var(--second-color);
+  text-decoration: underline;
 }
 
-button {
+/* Buttons */
+button[type="submit"] {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  background-color: var(--main-color);
   color: white;
   border: none;
   border-radius: 8px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-button:hover {
+button[type="submit"]:hover {
+  background-color: #d3762a; /* لون أغمق سنة من البرتقالي */
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(139, 92, 246, 0.6);
+  box-shadow: 0 5px 15px rgba(238, 142, 58, 0.4);
 }
 
-button:active {
-  transform: translateY(0);
-}
-
-.signup-link {
-  text-align: center;
+/* Bottom Links */
+.signup-link,
+.signin-link {
   margin-top: 25px;
-  color: #a1a1aa;
-  font-size: 14px;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-.signup-link a {
-  color: #a78bfa;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.signup-link a:hover {
-  color: #c4b5fd;
+/* Responsive */
+@media (max-width: 500px) {
+  .container {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+  
+  .name-row {
+    flex-direction: column;
+    gap: 0;
+  }
 }
