@@ -1,12 +1,6 @@
 let booksData = [];
 let filteredBooks = [];
-const bestSellerBooks = document.querySelector(".bestseller");
-const cartCount = document.querySelector(".cart-count");
-const currentCount = parseInt(localStorage.getItem("cartCount")) || 0;
-
-if (currentCount > 0) {
-  cartCount.textContent = currentCount;
-}
+const bestSellerBooks = document.querySelector(".all-books");
 
 window.viewBookDetails = function (bookId) {
   const book = booksData.find((b) => b.id === bookId);
@@ -18,8 +12,6 @@ window.viewBookDetails = function (bookId) {
 window.addToCart = function (bookId) {
   const book = booksData.find((b) => b.id === bookId);
   console.log(`Added "${book.title}" to cart`);
-  cartCount.textContent = currentCount + 1;
-  localStorage.setItem("cartCount", cartCount.textContent);
   showNotification(`"${book.title}" added to cart!`, "success");
 };
 
@@ -38,8 +30,14 @@ window.toggleWishlist = function (bookId) {
 };
 
 function createFilterControls() {
-  const carouselContainer = document.querySelector(".carousel-container");
-  const titleElement = carouselContainer.querySelector(".title");
+  const booksContainer = document.querySelector(".all-books");
+  let titleElement = booksContainer.querySelector(".title");
+  if (!titleElement) {
+    titleElement = document.createElement("h2");
+    titleElement.className = "title";
+    titleElement.textContent = "All Books";
+    booksContainer.appendChild(titleElement);
+  }
 
   const filterContainer = document.createElement("div");
   filterContainer.className = "filter-container";
@@ -188,14 +186,15 @@ function filterBooks() {
     const matchesSearch =
       !searchTerm ||
       book.title.toLowerCase().includes(searchTerm) ||
-      book.author.toLowerCase().includes(searchTerm);
+      book.authors.toLowerCase().includes(searchTerm);
 
     const matchesCategory = !categoryFilter || book.category === categoryFilter;
 
     let matchesPrice = true;
     if (priceFilter) {
       const [min, max] = priceFilter.split("-").map(Number);
-      matchesPrice = book.price >= min && book.price <= max;
+      const bookPrice = parseFloat(book.price.replace("$", ""));
+      matchesPrice = bookPrice >= min && bookPrice <= max;
     }
 
     const matchesRating =
@@ -208,16 +207,23 @@ function filterBooks() {
 }
 
 function displayBooks(books) {
-  bestSellerBooks.innerHTML = "";
+  // Clear only the book cards, not the title and filters
+  const existingCards = bestSellerBooks.querySelectorAll(
+    ".modern-card, .no-results, .error-message"
+  );
+  existingCards.forEach((card) => card.remove());
 
   if (books.length === 0) {
-    bestSellerBooks.innerHTML = `
+    bestSellerBooks.insertAdjacentHTML(
+      "beforeend",
+      `
       <div class="no-results">
         <i class="fas fa-search"></i>
         <h3>No books found</h3>
         <p>Try adjusting your filters or search terms</p>
       </div>
-    `;
+    `
+    );
     return;
   }
 
@@ -233,8 +239,6 @@ function clearAllFilters() {
   document.getElementById("ratingFilter").value = "";
   displayBooks(booksData);
 }
-
-// Functions now defined globally at the top of the file
 
 function showNotification(message, type = "info") {
   const notification = document.createElement("div");
@@ -260,8 +264,30 @@ function showNotification(message, type = "info") {
 
 (async () => {
   try {
-    const response = await fetch("./dumyData.json");
-    booksData = (await response.json()).books;
+    const response = await fetch("../data/books.json");
+    const data = await response.json();
+    booksData = data.books.map((book, index) => ({
+      ...book,
+      id: index + 1,
+      category: book.title.toLowerCase().includes("python")
+        ? "Python"
+        : book.title.toLowerCase().includes("machine learning") ||
+          book.title.toLowerCase().includes("ml")
+        ? "Machine Learning"
+        : book.title.toLowerCase().includes("data")
+        ? "Data Science"
+        : book.title.toLowerCase().includes("c++") ||
+          book.title.toLowerCase().includes("c & gui")
+        ? "C/C++"
+        : book.title.toLowerCase().includes("snowflake")
+        ? "Database"
+        : book.title.toLowerCase().includes("javascript") ||
+          book.title.toLowerCase().includes("js")
+        ? "JavaScript"
+        : book.title.toLowerCase().includes("web")
+        ? "Web Development"
+        : "Programming",
+    }));
 
     filteredBooks = [...booksData];
 
@@ -284,8 +310,6 @@ function showNotification(message, type = "info") {
     document
       .getElementById("clearFilters")
       .addEventListener("click", clearAllFilters);
-
-    setupArrowNavigation();
   } catch (error) {
     console.error("Error fetching books:", error);
     bestSellerBooks.innerHTML = `
@@ -297,38 +321,3 @@ function showNotification(message, type = "info") {
     `;
   }
 })();
-
-function setupArrowNavigation() {
-  const carousel = document.getElementById("carousel");
-  const leftArrow = document.querySelector(".arrow.left");
-  const rightArrow = document.querySelector(".arrow.right");
-
-  function scrollCarousel(direction) {
-    if (!carousel) return;
-
-    const card = carousel.querySelector(".modern-card");
-    if (!card) return;
-
-    const cardWidth = card.offsetWidth;
-    const gap = 20; // Match the gap in CSS
-    const scrollAmount = (cardWidth + gap) * direction;
-
-    carousel.scrollBy({
-      left: scrollAmount,
-      behavior: "smooth",
-    });
-  }
-
-  // Remove any existing listeners and add new ones
-  if (leftArrow) {
-    leftArrow.replaceWith(leftArrow.cloneNode(true));
-    const newLeftArrow = document.querySelector(".arrow.left");
-    newLeftArrow.addEventListener("click", () => scrollCarousel(-1));
-  }
-
-  if (rightArrow) {
-    rightArrow.replaceWith(rightArrow.cloneNode(true));
-    const newRightArrow = document.querySelector(".arrow.right");
-    newRightArrow.addEventListener("click", () => scrollCarousel(1));
-  }
-}
