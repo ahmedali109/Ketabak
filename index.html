@@ -1,233 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=">
-  <link rel="stylesheet" href="css/all.min.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&display=swap"
-    rel="stylesheet">
-  <title>Ketabak</title>
-</head>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/global.css" />
 
-<body>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-  <!--start landing page-->
-  <div class="landing-page">
-    <div class="overlay"></div>
-    <div class="header">
-      <div class="logo">ketabak</div>
-      <ul class="links">
-        <li><a href="" class="anchor-styling">books</a></li>
-        <li><a href="" class="anchor-styling">categories</a></li>
-        <li><a href="" class="anchor-styling">authors</a></li>
-        <li><a href="" class="anchor-styling">bestseller</a></li>
-        <li><a href="" class="anchor-styling">About Us</a></li>
-      </ul>
-      <div class="header-actions">
-        <div class="cart-icon">
-          <i class="fas fa-shopping-cart"></i>
-          <span class="cart-count">3</span>
-        </div>
-        <button type="button" class="btn">Login</button>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
 
-      </div>
-    </div>
-    <div class="intro-text ">
-      <h1>Discover the World of Books with Ketabak</h1>
-      <p>Browse the latest books, explore different categories, and follow your favorite authors with ease.</p>
-      <button class="btn explore-btn">Explore Now</button>
-    </div>
-  </div>
-  <!--end landing page-->
+    <title>Ketabak - Discover Books</title>
+  </head>
+  <body>
+    <!-- ==================== Header ==================== -->
+    <header class="header">
+      <div class="header-container">
+        <div class="logo">ketabak</div>
 
+        <ul class="nav-links">
+          <li><a href="#books">Books</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#authors">Authors</a></li>
+          <li><a href="#bestseller">Bestseller</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
 
-  <!--start about us page-->
-
-  <section class="about-us">
-    <div class="about">
-      <h2 class="title">About Ketabak</h2>
-      <p>
-        Ketabak is a platform dedicated to book lovers, offering a seamless experience to discover new books, explore
-        different categories, and stay updated with your favorite authors.
-      </p>
-    </div>
-
-    <div class="mission">
-      <h3 class="title">Our Mission</h3>
-      <p>
-        To inspire and nurture a love for reading by providing an easy-to-use platform with a diverse library of books
-        and personalized recommendations.
-      </p>
-    </div>
-
-    <div class="values">
-      <h3 class="title">Our Values</h3>
-      <ul>
-        <li>Promoting a culture of reading and learning</li>
-        <li>Ensuring easy access to literary content</li>
-        <li>Supporting authors and content creators</li>
-      </ul>
-    </div>
-
-  </section>
-
-
-  <!--end about us page-->
-
-  <!--start author page-->
-  <div class="quote-container">
-    <img src="images/author.jpg" alt="Famous Author" class="author-img">
-    <div class="quote-box">
-      <p class="quote">"The mystery of human existence lies not in just staying alive, but in finding something to live
-        for."</p>
-      <h4 class="author">— Fyodor Dostoevsky</h4>
-    </div>
-  </div>
-  <!--end author page-->
-
-
-  <!--start bestseller page-->
-  <div class="carousel-container">
-    <h1 class="title">bestseller</h1>
-    <div class="bestseller" id="carousel">
-     
-      <div class="card">
-        <div class="book-image">
-          <img src="images/bestsellers/bestseller-1.jpg" alt="Book 1">
-        </div>
-        <div class="book-details">
-          <p>Book 1</p>
-          <p>by: Author 1</p>
-          <div class="rate" data-rating="4"></div>
+        <div class="header-actions">
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">3</span>
+          </div>
+          <button class="login-btn">Login</button>
         </div>
       </div>
+    </header>
 
-      <div class="card">
-        <div class="book-image">
-          <img src="images/bestsellers/bestseller-1.jpg" alt="Book 2">
-        </div>
-        <div class="book-details">
-          <p>Book 2</p>
-          <p>by: Author 2</p>
-          <div class="rate" data-rating="3"></div>
-        </div>
+    <!-- ==================== Landing Page ==================== -->
+    <section class="landing-page">
+      <div class="overlay"></div>
+      <div class="intro-text">
+        <h1>Discover the World of Books with Ketabak</h1>
+        <p>
+          Browse the latest books, explore different categories, and follow your
+          favorite authors with ease.
+        </p>
+        <button class="explore-btn">Explore Now</button>
       </div>
+    </section>
 
-      <div class="card">
-        <div class="book-image">
-          <img src="images/bestsellers/bestseller-1.jpg" alt="Book 3">
-        </div>
-        <div class="book-details">
-          <p>Book 3</p>
-          <p>by: Author 3</p>
-          <div class="rate" data-rating="1"></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="book-image">
-          <img src="images/bestsellers/bestseller-1.jpg" alt="Book 4">
-        </div>
-        <div class="book-details">
-          <p>Book 4</p>
-          <p>by: Author 4</p>
-          <div class="rate" data-rating="4"></div>
-        </div>
+    <!-- ==================== About Us Section ==================== -->
+    <section class="about-us" id="about">
+      <div class="about">
+        <h2 class="title">About Ketabak</h2>
+        <p>
+          Ketabak is a platform dedicated to book lovers, offering a seamless
+          experience to discover new books, explore different categories, and
+          stay updated with your favorite authors.
+        </p>
       </div>
 
-      <div class="card">
-        <div class="book-image">
-          <img src="images/bestsellers/bestseller-1.jpg" alt="Book 4">
-        </div>
-        <div class="book-details">
-          <p>Book 4</p>
-          <p>by: Author 4</p>
-          <div class="rate" data-rating="4"></div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="book-image">
-          <img src="images/bestsellers/bestseller-1.jpg" alt="Book 4">
-        </div>
-        <div class="book-details">
-          <p>Book 4</p>
-          <p>by: Author 4</p>
-          <div class="rate" data-rating="4"></div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="book-image">
-          <img src="images/bestsellers/bestseller-1.jpg" alt="Book 4">
-        </div>
-        <div class="book-details">
-          <p>Book 4</p>
-          <p>by: Author 4</p>
-          <div class="rate" data-rating="4"></div>
-        </div>
+      <div class="mission">
+        <h3 class="title">Our Mission</h3>
+        <p>
+          To inspire and nurture a love for reading by providing an easy-to-use
+          platform with a diverse library of books and personalized
+          recommendations.
+        </p>
       </div>
 
-      <div class="card">
-        <div class="book-image">
-          <img src="images/bestsellers/bestseller-1.jpg" alt="Book 4">
-        </div>
-        <div class="book-details">
-          <p>Book 4</p>
-          <p>by: Author 4</p>
-          <div class="rate" data-rating="4"></div>
-        </div>
+      <div class="values">
+        <h3 class="title">Our Values</h3>
+        <ul>
+          <li>Promoting a culture of reading and learning</li>
+          <li>Ensuring easy access to literary content</li>
+          <li>Supporting authors and content creators</li>
+        </ul>
       </div>
+    </section>
 
-      <div class="card">
-        <div class="book-image">
-          <img src="images/bestsellers/bestseller-1.jpg" alt="Book 4">
-        </div>
-        <div class="book-details">
-          <p>Book 4</p>
-          <p>by: Author 4</p>
-          <div class="rate" data-rating="4"></div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="book-image">
-          <img src="images/bestsellers/bestseller-1.jpg" alt="Book 4">
-        </div>
-        <div class="book-details">
-          <p>Book 4</p>
-          <p>by: Author 4</p>
-          <div class="rate" data-rating="4"></div>
-        </div>
+    <!-- ==================== Quote Section ==================== -->
+    <div class="quote-container">
+      <img src="images/author.jpg" alt="Famous Author" class="author-img" />
+      <div class="quote-box">
+        <p class="quote">
+          "The mystery of human existence lies not in just staying alive, but in
+          finding something to live for."
+        </p>
+        <h4 class="author">— Fyodor Dostoevsky</h4>
       </div>
     </div>
 
-    <button class="arrow left" onclick="scrollCarousel(-1)">❮</button>
-    <button class="arrow right" onclick="scrollCarousel(1)">❯</button>
+    <!-- ==================== Bestseller Section ==================== -->
+    <div class="carousel-container" id="bestseller">
+      <h1 class="title">Bestseller</h1>
 
-  </div>
+      <div class="bestseller" id="carousel">
+        <!-- Book Card 1 -->
+        <div class="card">
+          <div class="book-image">
+            <img src="images/bestsellers/bestseller-1.jpg" alt="Book 1" />
+          </div>
+          <div class="book-details">
+            <p>Book 1</p>
+            <p>by: Author 1</p>
+            <div class="rate" data-rating="4">★★★★☆</div>
+          </div>
+        </div>
 
-  <!--end bestseller page-->
-  <script>
+        <!-- Book Card 2 -->
+        <div class="card">
+          <div class="book-image">
+            <img src="images/bestsellers/bestseller-1.jpg" alt="Book 2" />
+          </div>
+          <div class="book-details">
+            <p>Book 2</p>
+            <p>by: Author 2</p>
+            <div class="rate" data-rating="3">★★★☆☆</div>
+          </div>
+        </div>
 
-    function scrollCarousel(direction) {
-      const carousel = document.querySelector('.bestseller');
-      const cardWidth = carousel.querySelector('.card').offsetWidth + 5;
-      carousel.scrollBy({
-        left: direction * cardWidth * 2 ,
-        behavior: 'smooth'
-      });
-    }
+        <!-- Book Card 3 -->
+        <div class="card">
+          <div class="book-image">
+            <img src="images/bestsellers/bestseller-1.jpg" alt="Book 3" />
+          </div>
+          <div class="book-details">
+            <p>Book 3</p>
+            <p>by: Author 3</p>
+            <div class="rate" data-rating="5">★★★★★</div>
+          </div>
+        </div>
 
-  </script>
-  <script src="js/main.js" type="module" defer></script>
-</body>
+        <!-- Book Card 4 -->
+        <div class="card">
+          <div class="book-image">
+            <img src="images/bestsellers/bestseller-1.jpg" alt="Book 4" />
+          </div>
+          <div class="book-details">
+            <p>Book 4</p>
+            <p>by: Author 4</p>
+            <div class="rate" data-rating="4">★★★★☆</div>
+          </div>
+        </div>
 
+        <!-- Book Card 5 -->
+        <div class="card">
+          <div class="book-image">
+            <img src="images/bestsellers/bestseller-1.jpg" alt="Book 5" />
+          </div>
+          <div class="book-details">
+            <p>Book 5</p>
+            <p>by: Author 5</p>
+            <div class="rate" data-rating="4">★★★★☆</div>
+          </div>
+        </div>
+
+        <!-- Book Card 6 -->
+        <div class="card">
+          <div class="book-image">
+            <img src="images/bestsellers/bestseller-1.jpg" alt="Book 6" />
+          </div>
+          <div class="book-details">
+            <p>Book 6</p>
+            <p>by: Author 6</p>
+            <div class="rate" data-rating="5">★★★★★</div>
+          </div>
+        </div>
+
+        <!-- Book Card 7 -->
+        <div class="card">
+          <div class="book-image">
+            <img src="images/bestsellers/bestseller-1.jpg" alt="Book 7" />
+          </div>
+          <div class="book-details">
+            <p>Book 7</p>
+            <p>by: Author 7</p>
+            <div class="rate" data-rating="4">★★★★☆</div>
+          </div>
+        </div>
+
+        <!-- Book Card 8 -->
+        <div class="card">
+          <div class="book-image">
+            <img src="images/bestsellers/bestseller-1.jpg" alt="Book 8" />
+          </div>
+          <div class="book-details">
+            <p>Book 8</p>
+            <p>by: Author 8</p>
+            <div class="rate" data-rating="3">★★★☆☆</div>
+          </div>
+        </div>
+
+        <!-- Book Card 9 -->
+        <div class="card">
+          <div class="book-image">
+            <img src="images/bestsellers/bestseller-1.jpg" alt="Book 9" />
+          </div>
+          <div class="book-details">
+            <p>Book 9</p>
+            <p>by: Author 9</p>
+            <div class="rate" data-rating="5">★★★★★</div>
+          </div>
+        </div>
+
+        <!-- Book Card 10 -->
+        <div class="card">
+          <div class="book-image">
+            <img src="images/bestsellers/bestseller-1.jpg" alt="Book 10" />
+          </div>
+          <div class="book-details">
+            <p>Book 10</p>
+            <p>by: Author 10</p>
+            <div class="rate" data-rating="4">★★★★☆</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Arrows -->
+      <button class="arrow left" >❮</button>
+      <button class="arrow right" >❯</button>
+    </div>
+
+    <!-- External JS File -->
+    <script src="js/main.js" type="module" defer></script>
+  </body>
 </html>
