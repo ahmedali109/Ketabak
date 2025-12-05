@@ -1,211 +1,202 @@
-﻿/* About Page Specific Styles */
-
-/* حاوية عامة لضبط العرض */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+﻿.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* تعديل خلفية الهيرو (الجزء العلوي) */
 .about-hero {
-    min-height: 50vh; /* ارتفاع أقل من الصفحة الرئيسية */
-    background-attachment: fixed; /* تأثير ثبات الخلفية */
+  min-height: 50vh;
+  background-attachment: fixed;
 }
 
-/* قسم المحتوى (القصة) */
 .about-content-section {
-    background-color: #fff;
-    padding: 80px 0;
-    margin-top: -50px; /* تداخل مع الهيرو */
-    position: relative;
-    z-index: 2;
-    border-radius: 30px 30px 0 0;
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+  background-color: #fff;
+  padding: 80px 0;
+  margin-top: -50px;
+  position: relative;
+  z-index: 2;
+  border-radius: 30px 30px 0 0;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .story-grid {
-    display: flex;
-    align-items: center;
-    gap: 50px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
 .story-text {
-    flex: 1;
+  flex: 1;
 }
 
 .story-image {
-    flex: 1;
+  flex: 1;
 }
 
-    .story-image img {
-        width: 100%;
-        border-radius: 20px;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        transition: transform 0.3s ease;
-    }
+.story-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
 
-        .story-image img:hover {
-            transform: scale(1.02);
-        }
+.story-image img:hover {
+  transform: scale(1.02);
+}
 
 .section-title {
-    font-size: 2.5rem;
-    color: var(--second-color);
-    margin-bottom: 20px;
-    position: relative;
-    display: inline-block;
+  font-size: 2.5rem;
+  color: var(--second-color);
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
 }
 
-    .section-title::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -10px;
-        width: 60px;
-        height: 4px;
-        background-color: var(--main-color);
-        border-radius: 2px;
-    }
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 60px;
+  height: 4px;
+  background-color: var(--main-color);
+  border-radius: 2px;
+}
 
 .story-text p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
 }
 
-/* صندوق الإحصائيات */
 .stats-box {
-    display: flex;
-    gap: 40px;
-    margin-top: 30px;
-    padding-top: 30px;
-    border-top: 1px solid #eee;
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
 }
 
 .stat-item h3 {
-    font-size: 2rem;
-    color: var(--main-color);
-    font-weight: 800;
+  font-size: 2rem;
+  color: var(--main-color);
+  font-weight: 800;
 }
 
 .stat-item span {
-    color: #777;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  color: #777;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* قسم القيم */
 .values-section {
-    background-color: var(--second-color);
-    padding: 80px 0;
-    color: #fff;
-    margin-bottom: 60px;
+  background-color: var(--second-color);
+  padding: 80px 0;
+  color: #fff;
+  margin-bottom: 60px;
 }
 
 .values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .value-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    transition: transform 0.3s ease, background 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-    .value-card:hover {
-        transform: translateY(-10px);
-        background: rgba(255, 255, 255, 0.15);
-    }
+.value-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+}
 
-    .value-card i {
-        font-size: 2.5rem;
-        color: var(--main-color);
-        margin-bottom: 20px;
-    }
+.value-card i {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin-bottom: 20px;
+}
 
-    .value-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-    }
+.value-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
 
-    .value-card p {
-        color: #ddd;
-        line-height: 1.6;
-    }
+.value-card p {
+  color: #ddd;
+  line-height: 1.6;
+}
 
-/* قسم الفريق */
 .team-container {
-    max-width: 1200px;
-    margin: 0 auto 80px;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
 }
 
 .team-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
 }
 
 .team-card {
-    transition: all 0.4s ease !important;
+  transition: all 0.4s ease !important;
 }
 
-    .team-card:hover {
-        transform: translateY(-15px) !important;
-    }
+.team-card:hover {
+  transform: translateY(-15px) !important;
+}
 
 .team-socials {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
 }
 
-    .team-socials a {
-        color: #777;
-        font-size: 18px;
-        transition: color 0.3s ease;
-    }
+.team-socials a {
+  color: #777;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
 
-        .team-socials a:hover {
-            color: var(--main-color);
-        }
+.team-socials a:hover {
+  color: var(--main-color);
+}
 
-/* التجاوب مع الشاشات */
 @media (max-width: 992px) {
-    .story-grid {
-        flex-direction: column;
-    }
+  .story-grid {
+    flex-direction: column;
+  }
 
-    .story-image img {
-        height: 300px;
-        object-fit: cover;
-    }
+  .story-image img {
+    height: 300px;
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 576px) {
-    .about-hero {
-        min-height: 40vh;
-    }
+  .about-hero {
+    min-height: 40vh;
+  }
 
-    .intro-text h1 {
-        font-size: 2.5rem;
-    }
+  .intro-text h1 {
+    font-size: 2.5rem;
+  }
 
-    .stats-box {
-        gap: 20px;
-        justify-content: space-between;
-    }
+  .stats-box {
+    gap: 20px;
+    justify-content: space-between;
+  }
 }

@@ -1,0 +1,158 @@
+:root {
+  --main-color: #ee8e3a;
+  --second-color: #1a1a2e;
+  --text-color: #eaeaea;
+  --bg-color: #0f0f1e;
+  --card-bg: #16213e;
+  --hover-bg: #1f2b47;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  color: var(--main-color);
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.authors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.author-card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.author-card:hover {
+  background-color: var(--hover-bg);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(238, 142, 58, 0.2);
+}
+
+/* Default: Image on right, content on left */
+.author-card .author-content {
+  flex: 1;
+  order: 1;
+}
+
+.author-card .author-image {
+  flex: 0 0 250px;
+  order: 2;
+}
+
+/* Reverse: Image on left, content on right */
+.author-card.reverse .author-content {
+  order: 2;
+}
+
+.author-card.reverse .author-image {
+  order: 1;
+}
+
+.author-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.author-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.author-card:hover .author-image img {
+  transform: scale(1.1);
+}
+
+.author-name {
+  font-size: 1.8rem;
+  color: var(--main-color);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.author-bio {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.author-stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.author-stats span {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.author-stats strong {
+  color: var(--main-color);
+  font-size: 1.3rem;
+  margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .author-card,
+  .author-card.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .author-card .author-content,
+  .author-card .author-image,
+  .author-card.reverse .author-content,
+  .author-card.reverse .author-image {
+    order: unset;
+    flex: unset;
+  }
+
+  .author-image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .author-stats {
+    justify-content: center;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+}
