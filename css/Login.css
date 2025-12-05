@@ -1,11 +1,13 @@
-/* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 :root {
   --main-color: #ee8e3a;
-  --second-color: #2c3e50;
-  --text-color: #191919;
-  --bg-color: #f8f9fa;
+  --second-color: #64b5f6;
+  --text-color: #e0e0e0;
+  --bg-color: #0a0e27;
+  --container-bg: #1a1f3a;
+  --input-bg: #242b4a;
+  --input-border: #2d3654;
 }
 
 * {
@@ -21,20 +23,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* خلفية هادية متماشية مع الثيم */
-  background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('../images/landing-1.jpg'); 
+  background: linear-gradient(
+      135deg,
+      rgba(10, 14, 39, 0.95),
+      rgba(26, 31, 58, 0.95)
+    ),
+    url("../images/landing-1.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .container {
-  background: #fff;
+  background: var(--container-bg);
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   width: 100%;
   max-width: 450px;
   text-align: center;
+  border: 1px solid rgba(100, 181, 246, 0.1);
 }
 
 /* Headers */
@@ -43,10 +50,11 @@ h1 {
   font-family: "Cairo", sans-serif;
   margin-bottom: 10px;
   font-size: 2rem;
+  text-shadow: 0 2px 10px rgba(100, 181, 246, 0.3);
 }
 
 .subtitle {
-  color: #666;
+  color: #a0a0a0;
   margin-bottom: 30px;
   font-size: 0.95rem;
 }
@@ -60,7 +68,7 @@ h1 {
 .form-group label {
   display: block;
   margin-bottom: 8px;
-  color: var(--second-color);
+  color: var(--text-color);
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -68,16 +76,23 @@ h1 {
 .form-group input {
   width: 100%;
   padding: 12px 15px;
-  border: 2px solid #e9ecef;
+  border: 2px solid var(--input-border);
   border-radius: 8px;
   font-size: 14px;
   transition: all 0.3s ease;
   outline: none;
+  background-color: var(--input-bg);
+  color: var(--text-color);
 }
 
 .form-group input:focus {
   border-color: var(--main-color);
-  box-shadow: 0 0 0 4px rgba(238, 142, 58, 0.1);
+  box-shadow: 0 0 0 4px rgba(238, 142, 58, 0.15);
+  background-color: #2a3150;
+}
+
+.form-group input::placeholder {
+  color: #6b7280;
 }
 
 /* Name Row (For Signup) */
@@ -98,6 +113,7 @@ h1 {
   justify-content: space-between;
   margin-bottom: 25px;
   font-size: 0.85rem;
+  color: var(--text-color);
 }
 
 .checkbox-group {
@@ -141,9 +157,9 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #d3762a; /* لون أغمق سنة من البرتقالي */
+  background-color: #d3762a;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(238, 142, 58, 0.4);
+  box-shadow: 0 5px 20px rgba(238, 142, 58, 0.5);
 }
 
 /* Bottom Links */
@@ -151,7 +167,7 @@ button[type="submit"]:hover {
 .signin-link {
   margin-top: 25px;
   font-size: 0.9rem;
-  color: #666;
+  color: #a0a0a0;
 }
 
 /* Responsive */
@@ -160,7 +176,7 @@ button[type="submit"]:hover {
     padding: 30px 20px;
     margin: 20px;
   }
-  
+
   .name-row {
     flex-direction: column;
     gap: 0;
