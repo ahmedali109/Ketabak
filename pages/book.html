@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Details | Ketabak</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" /> <link rel="stylesheet" href="../css/book.css" /> </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a href="../index.html" class="logo" style="text-decoration: none;">ketabak</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="books.html">All Books</a></li>
+          <li><a href="#categories">Categories</a></li>
+        </ul>
+        <div class="header-actions">
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+          </div>
+          <button class="login-btn">Login</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="book-section">
+        <div class="book-hero">
+            <div class="book-cover-container">
+                <img id="book-cover" src="" alt="Book Cover" class="book-cover">
+                <div class="cover-nav">
+                    <button class="nav-btn up" id="prev-btn" title="Previous Book"><i class="fa-solid fa-chevron-up"></i></button>
+                    <button class="nav-btn down" id="next-btn" title="Next Book"><i class="fa-solid fa-chevron-down"></i></button>
+                </div>
+            </div>
+
+            <div class="book-info-header">
+                <div class="badges">
+                   <span class="stock-badge" id="stock-badge">Checking...</span>
+                </div>
+                <h1 id="book-title">Loading Title...</h1>
+                <h3 class="author">By: <span id="book-author">...</span></h3>
+                <p class="subtitle-text" id="book-subtitle">Loading subtitle...</p>
+                
+                <div class="rating-display" id="stars-container">
+                    </div>
+
+                <div class="action-buttons">
+                    <button class="btn-primary" id="addToCartBtn">
+                        Add to Cart - <span id="book-price">$0.00</span>
+                    </button>
+                    <div class="icon-actions">
+                        <button class="btn-icon" id="bookmarkBtn" title="Wishlist"><i class="fa-regular fa-bookmark"></i></button>
+                        <button class="btn-icon" title="Share"><i class="fa-solid fa-share-nodes"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="details-card">
+            <div class="grid-layout">
+                <div class="grid-item description">
+                    <h4>Description</h4>
+                    <p id="book-desc-main">Loading description...</p>
+                    
+                    <div class="publisher-info">
+                        <strong>Publisher:</strong> <span id="book-publisher">...</span> (<span id="book-year">...</span>)
+                    </div>
+                </div>
+
+                <div class="grid-item meta-data">
+                    <div class="meta-group">
+                        <h4>ISBN-13</h4> 
+                        <p class="isbn" id="book-isbn">...</p>
+                    </div>
+                    <div class="meta-group">
+                        <h4>Availability</h4>
+                        <p id="book-stock">Checking...</p>
+                    </div>
+                    <div class="meta-group">
+                        <h4>External Link</h4>
+                        <a href="#" id="book-url" target="_blank" class="external-link">View on Store <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="../js/book.js" defer></script>
+  </body>
+</html>
