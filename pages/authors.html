@@ -3,21 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Authors</title>
     <link rel="stylesheet" href="../css/authors.css" />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-     <header class="header">
+    <header class="header">
       <div class="header-container">
-        <div class="logo">ketabak</div>
+        <a href="index.html" class="logo">ketabak</a>
 
         <ul class="nav-links">
-          <li><a href="pages/books.html">Books</a></li>
-          <li><a href="pages/categories.html">Categories</a></li>
-          <li><a href="#authors">Authors</a></li>
-          <li><a href="#bestseller">Bestseller</a></li>
-          <li><a href="pages/about.html">About Us</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="authors.html">Authors</a></li>
+          <li><a href="about.html">About Us</a></li>
         </ul>
 
         <div class="header-actions">
@@ -25,11 +30,12 @@
             <i class="fas fa-shopping-cart"></i>
             <span class="cart-count">3</span>
           </div>
-          <a href="pages/signup.html" class="signup-btn">Sign Up</a>
-          <a href="pages/login.html" class="login-btn">Login</a>
+          <a href="signup.html" class="signup-btn">Sign Up</a>
+          <a href="login.html" class="login-btn">Login</a>
         </div>
       </div>
     </header>
+
     <div class="container">
       <h1 class="page-title">Our Authors</h1>
 
@@ -173,5 +179,78 @@
         </div>
       </div>
     </div>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3 class="footer-logo">ketabak</h3>
+          <p class="footer-description">
+            Your gateway to a world of knowledge and imagination. Discover,
+            read, and transform your life one book at a time.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#books">All Books</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#authors">Authors</a></li>
+            <li><a href="#bestseller">Bestsellers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="pages/about.html">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</li>
+            <li><i class="fas fa-phone"></i> +20 123 456 7890</li>
+            <li><i class="fas fa-envelope"></i> info@ketabak.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Ketabak. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <span>|</span>
+          <a href="#">Terms of Service</a>
+          <span>|</span>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

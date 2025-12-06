@@ -19,7 +19,6 @@ body {
   color: var(--text-color);
 }
 
-/* ==================== Header Styling ==================== */
 .header {
   position: fixed;
   top: 0;
@@ -172,7 +171,6 @@ body {
   box-shadow: 0 5px 15px rgba(238, 142, 58, 0.3);
 }
 
-/* ==================== Landing Page ==================== */
 .landing-page {
   min-height: 100vh;
   background: linear-gradient(rgba(20, 22, 25, 0.85), rgba(20, 22, 25, 0.85)),
@@ -251,7 +249,6 @@ body {
   box-shadow: 0 10px 30px rgba(238, 142, 58, 0.4);
 }
 
-/* ==================== About Us Section ==================== */
 .about-us {
   padding: 80px 40px;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -314,7 +311,6 @@ body {
   font-size: 1.3rem;
 }
 
-/* ==================== Quote Section ==================== */
 .quote-container {
   display: flex;
   align-items: center;
@@ -356,7 +352,6 @@ body {
   color: var(--main-color);
 }
 
-/* ==================== Bestseller Section ==================== */
 .carousel-container {
   position: relative;
   max-width: 1400px;
@@ -470,7 +465,6 @@ body {
   right: 10px;
 }
 
-/* ==================== Featured Categories Section ==================== */
 .featured-categories {
   max-width: 1400px;
   margin: 80px auto;
@@ -589,7 +583,6 @@ body {
   font-weight: 600;
 }
 
-/* ==================== Newsletter Section ==================== */
 .newsletter-section {
   background: linear-gradient(135deg, #1a1a2e 0%, var(--card-bg) 100%);
   padding: 80px 40px;
@@ -736,7 +729,6 @@ body {
   font-size: 18px;
 }
 
-/* ==================== Footer ==================== */
 .footer {
   background: linear-gradient(135deg, #0a0a15 0%, var(--second-color) 100%);
   color: var(--text-color);
@@ -888,7 +880,6 @@ body {
   color: #666;
 }
 
-/* ==================== Responsive Design ==================== */
 @media (max-width: 992px) {
   .header-container {
     padding: 15px 25px;

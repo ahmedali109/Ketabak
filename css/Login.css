@@ -44,7 +44,6 @@ body {
   border: 1px solid rgba(100, 181, 246, 0.1);
 }
 
-/* Headers */
 h1 {
   color: var(--second-color);
   font-family: "Cairo", sans-serif;
@@ -59,7 +58,6 @@ h1 {
   font-size: 0.95rem;
 }
 
-/* Form Groups */
 .form-group {
   margin-bottom: 20px;
   text-align: left;
@@ -95,7 +93,6 @@ h1 {
   color: #6b7280;
 }
 
-/* Name Row (For Signup) */
 .name-row {
   display: flex;
   gap: 15px;
@@ -105,7 +102,6 @@ h1 {
   flex: 1;
 }
 
-/* Checkboxes & Links */
 .remember-forgot,
 .checkbox-group {
   display: flex;
@@ -140,7 +136,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Buttons */
 button[type="submit"] {
   width: 100%;
   padding: 14px;
@@ -162,7 +157,6 @@ button[type="submit"]:hover {
   box-shadow: 0 5px 20px rgba(238, 142, 58, 0.5);
 }
 
-/* Bottom Links */
 .signup-link,
 .signin-link {
   margin-top: 25px;
@@ -170,7 +164,6 @@ button[type="submit"]:hover {
   color: #a0a0a0;
 }
 
-/* Responsive */
 @media (max-width: 500px) {
   .container {
     padding: 30px 20px;

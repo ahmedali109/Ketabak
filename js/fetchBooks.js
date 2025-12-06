@@ -4,9 +4,10 @@ const bestSellerBooks = document.querySelector(".all-books");
 
 window.viewBookDetails = function (bookId) {
   const book = booksData.find((b) => b.id === bookId);
-  alert(
-    `Quick View: ${book.title}\n\nAuthor: ${book.author}\nCategory: ${book.category}\nPrice: ${book.price}\nRating: ${book.rating}/5\nStock: ${book.stock}\nPublished: ${book.publishedYear}\nPublisher: ${book.publisher}\nISBN: ${book.isbn}`
-  );
+
+  sessionStorage.setItem("selectedBook", JSON.stringify(book));
+
+  window.location.href = "book.html";
 };
 
 window.addToCart = function (bookId) {

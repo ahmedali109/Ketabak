@@ -56,7 +56,6 @@ body {
   box-shadow: 0 10px 30px rgba(238, 142, 58, 0.2);
 }
 
-/* Default: Image on right, content on left */
 .author-card .author-content {
   flex: 1;
   order: 1;
@@ -67,7 +66,6 @@ body {
   order: 2;
 }
 
-/* Reverse: Image on left, content on right */
 .author-card.reverse .author-content {
   order: 2;
 }

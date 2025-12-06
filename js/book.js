@@ -1,128 +1,269 @@
-document.addEventListener('DOMContentLoaded', () => {
-    
-    let booksData = [];
-    let currentIndex = 0;
+let currentBook = null;
+let allBooks = [];
 
-    const ui = {
-        cover: document.getElementById('book-cover'),
-        title: document.getElementById('book-title'),
-        author: document.getElementById('book-author'),
-        subtitle: document.getElementById('book-subtitle'),
-        publisher: document.getElementById('book-publisher'),
-        year: document.getElementById('book-year'),
-        price: document.getElementById('book-price'),
-        isbn: document.getElementById('book-isbn'),
-        stockText: document.getElementById('book-stock'),
-        stockBadge: document.getElementById('stock-badge'),
-        descMain: document.getElementById('book-desc-main'),
-        starsContainer: document.getElementById('stars-container'),
-        urlBtn: document.getElementById('book-url')
-    };
+function generateStars(rating) {
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+  let starsHTML = "";
 
-   
-    fetch('../data/books.json') 
-        .then(response => {
-            if (!response.ok) throw new Error("Failed to load JSON");
-            return response.json();
-        })
-        .then(data => {
-            if(data.books && data.books.length > 0) {
-                booksData = data.books;
-                loadBook(currentIndex);
-            } else {
-                console.error("No books found in JSON");
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            ui.title.textContent = "Error loading data.";
-        });
+  for (let i = 0; i < fullStars; i++) {
+    starsHTML += '<i class="fas fa-star"></i>';
+  }
 
-    function loadBook(index) {
-        const book = booksData[index];
+  if (hasHalfStar) {
+    starsHTML += '<i class="fas fa-star-half-alt"></i>';
+  }
 
-        ui.cover.src = book.image;
-        ui.title.textContent = book.title;
-        ui.author.textContent = book.authors;
-        ui.subtitle.textContent = book.subtitle ? book.subtitle : "IT & Programming Masterpiece";
-        
-        ui.publisher.textContent = book.publisher;
-        ui.year.textContent = book.publisherYear;
-        ui.price.textContent = book.price == "$0.00" ? "Free" : book.price;
-        ui.isbn.textContent = book.isbn13;
-        ui.urlBtn.href = book.url;
+  const emptyStars = 5 - Math.ceil(rating);
+  for (let i = 0; i < emptyStars; i++) {
+    starsHTML += '<i class="far fa-star"></i>';
+  }
 
-        updateStockUI(book.stock);
+  return starsHTML;
+}
 
-        ui.descMain.textContent = generateDescription(book);
+function displayBookDetails(book) {
+  if (!book) {
+    console.error("No book data found");
+    window.location.href = "books.html";
+    return;
+  }
 
-        renderStars(book.rating);
+  currentBook = book;
 
-        ui.cover.style.opacity = 0.5;
-        setTimeout(() => ui.cover.style.opacity = 1, 300);
+  document.getElementById("book-cover").src = book.image;
+  document.getElementById("book-cover").alt = book.title;
+
+  document.getElementById("book-title").textContent = book.title;
+  document.getElementById("book-author").textContent =
+    book.authors || "Unknown Author";
+
+  const subtitleElement = document.getElementById("book-subtitle");
+  if (book.subtitle) {
+    subtitleElement.textContent = book.subtitle;
+  } else {
+    subtitleElement.style.display = "none";
+  }
+
+  const starsContainer = document.getElementById("stars-container");
+  starsContainer.innerHTML = `
+    ${generateStars(book.rating)}
+    <span class="rating-text">${book.rating}/5</span>
+  `;
+
+  document.getElementById("book-price").textContent = book.price;
+
+  const stockBadge = document.getElementById("stock-badge");
+  const isLowStock = book.stock < 10;
+
+  if (book.stock > 0) {
+    if (isLowStock) {
+      stockBadge.textContent = "⚠️ Low Stock";
+      stockBadge.className = "stock-badge low-stock";
+    } else {
+      stockBadge.textContent = "✓ In Stock";
+      stockBadge.className = "stock-badge in-stock";
     }
+  } else {
+    stockBadge.textContent = "✗ Out of Stock";
+    stockBadge.className = "stock-badge out-of-stock";
+  }
 
-    function updateStockUI(stock) {
-        if (parseInt(stock) > 0) {
-            ui.stockText.textContent = `${stock} copies available`;
-            ui.stockBadge.textContent = "In Stock";
-            ui.stockBadge.className = "stock-badge stock-in";
-        } else {
-            ui.stockText.textContent = "Out of stock";
-            ui.stockBadge.textContent = "Sold Out";
-            ui.stockBadge.className = "stock-badge stock-out";
-        }
-    }
+  const descElement = document.getElementById("book-desc-main");
+  if (book.description) {
+    descElement.textContent = book.description;
+  } else {
+    descElement.textContent = `A comprehensive book about ${book.title} by ${book.authors}. This book covers essential topics and provides valuable insights for readers interested in ${book.category}.`;
+  }
 
-    function generateDescription(book) {
-        return `Discover "${book.title}", a definitive guide written by ${book.authors}. 
-        Published by ${book.publisher} in ${book.publisherYear}, this book is rated ${book.rating}/5 by readers. 
-        It is an essential addition to your collection if you are interested in ${book.title.split(' ')[0]} and related technologies.`;
-    }
+  document.getElementById("book-publisher").textContent =
+    book.publisher || "Unknown";
+  document.getElementById("book-year").textContent =
+    book.publisherYear || "N/A";
 
-    function renderStars(rating) {
-        ui.starsContainer.innerHTML = '';
-        const fullStars = Math.floor(rating);
-        const hasHalfStar = rating % 1 !== 0;
+  document.getElementById("book-isbn").textContent =
+    book.isbn || "Not Available";
 
-        for (let i = 0; i < fullStars; i++) {
-            ui.starsContainer.innerHTML += '<i class="fa-solid fa-star"></i>';
-        }
-        if (hasHalfStar) {
-            ui.starsContainer.innerHTML += '<i class="fa-solid fa-star-half-stroke"></i>';
-        }
-        const emptyStars = 5 - Math.ceil(rating);
-        for (let i = 0; i < emptyStars; i++) {
-            ui.starsContainer.innerHTML += '<i class="fa-regular fa-star"></i>';
-        }
-        
-        ui.starsContainer.innerHTML += ` <span style="color:#bbb; font-size:0.9rem">(${rating})</span>`;
-    }
+  const stockText = document.getElementById("book-stock");
+  if (book.stock > 0) {
+    stockText.textContent = `${book.stock} copies available`;
+    stockText.style.color = isLowStock ? "#ff6b6b" : "#51cf66";
+  } else {
+    stockText.textContent = "Currently unavailable";
+    stockText.style.color = "#ff6b6b";
+  }
 
-    document.getElementById('next-btn').addEventListener('click', () => {
-        if (booksData.length === 0) return;
-        currentIndex = (currentIndex + 1) % booksData.length; // لو وصل للأخر يرجع للأول
-        loadBook(currentIndex);
-    });
+  const urlLink = document.getElementById("book-url");
+  if (book.url) {
+    urlLink.href = book.url;
+  } else {
+    urlLink.style.display = "none";
+  }
+}
 
-    document.getElementById('prev-btn').addEventListener('click', () => {
-        if (booksData.length === 0) return;
-        currentIndex = (currentIndex - 1 + booksData.length) % booksData.length; // لو في الأول يرجع للأخر
-        loadBook(currentIndex);
-    });
+function addToCart() {
+  if (!currentBook) return;
 
-    const bookmarkBtn = document.getElementById('bookmarkBtn');
-    bookmarkBtn.addEventListener('click', () => {
-        const icon = bookmarkBtn.querySelector('i');
-        icon.classList.toggle('fa-solid');
-        icon.classList.toggle('fa-regular');
-        
-        if(icon.classList.contains('fa-solid')) {
-            bookmarkBtn.style.color = "#ee8e3a";
-            bookmarkBtn.style.borderColor = "#ee8e3a";
-        } else {
-            bookmarkBtn.style.color = "";
-            bookmarkBtn.style.borderColor = "";
-        }
-    });
+  console.log(`Added "${currentBook.title}" to cart`);
+  showNotification(`"${currentBook.title}" added to cart!`, "success");
+
+  const cartCount = document.querySelector(".cart-count");
+  if (cartCount) {
+    const current = parseInt(cartCount.textContent) || 0;
+    cartCount.textContent = current + 1;
+  }
+}
+
+function toggleBookmark() {
+  const bookmarkBtn = document.getElementById("bookmarkBtn");
+  const icon = bookmarkBtn.querySelector("i");
+
+  if (icon.classList.contains("fa-regular")) {
+    icon.classList.replace("fa-regular", "fa-solid");
+    showNotification(`"${currentBook.title}" added to wishlist!`, "success");
+  } else {
+    icon.classList.replace("fa-solid", "fa-regular");
+    showNotification(`"${currentBook.title}" removed from wishlist!`, "info");
+  }
+}
+
+function showNotification(message, type = "info") {
+  const notification = document.createElement("div");
+  notification.className = `notification ${type}`;
+  notification.innerHTML = `
+    <i class="fas ${
+      type === "success" ? "fa-check-circle" : "fa-info-circle"
+    }"></i>
+    <span>${message}</span>
+  `;
+
+  if (!document.querySelector("#notification-styles")) {
+    const style = document.createElement("style");
+    style.id = "notification-styles";
+    style.textContent = `
+      .notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transform: translateX(400px);
+        transition: transform 0.3s ease;
+        z-index: 10000;
+      }
+      .notification.show {
+        transform: translateX(0);
+      }
+      .notification.success {
+        border-left: 4px solid #51cf66;
+      }
+      .notification.info {
+        border-left: 4px solid #339af0;
+      }
+      .notification i {
+        font-size: 20px;
+      }
+      .notification.success i {
+        color: #51cf66;
+      }
+      .notification.info i {
+        color: #339af0;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  document.body.appendChild(notification);
+
+  setTimeout(() => {
+    notification.classList.add("show");
+  }, 100);
+
+  setTimeout(() => {
+    notification.classList.remove("show");
+    setTimeout(() => notification.remove(), 300);
+  }, 3000);
+}
+
+async function navigateBook(direction) {
+  if (allBooks.length === 0) return;
+
+  const currentIndex = allBooks.findIndex((b) => b.id === currentBook.id);
+  let newIndex;
+
+  if (direction === "prev") {
+    newIndex = currentIndex > 0 ? currentIndex - 1 : allBooks.length - 1;
+  } else {
+    newIndex = currentIndex < allBooks.length - 1 ? currentIndex + 1 : 0;
+  }
+
+  const newBook = allBooks[newIndex];
+  sessionStorage.setItem("selectedBook", JSON.stringify(newBook));
+  displayBookDetails(newBook);
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+async function loadAllBooks() {
+  try {
+    const response = await fetch("../data/books.json");
+    const data = await response.json();
+    allBooks = data.books.map((book, index) => ({
+      ...book,
+      id: index + 1,
+      category: book.title.toLowerCase().includes("python")
+        ? "Python"
+        : book.title.toLowerCase().includes("machine learning") ||
+          book.title.toLowerCase().includes("ml")
+        ? "Machine Learning"
+        : book.title.toLowerCase().includes("data")
+        ? "Data Science"
+        : book.title.toLowerCase().includes("c++") ||
+          book.title.toLowerCase().includes("c & gui")
+        ? "C/C++"
+        : book.title.toLowerCase().includes("snowflake")
+        ? "Database"
+        : book.title.toLowerCase().includes("javascript") ||
+          book.title.toLowerCase().includes("js")
+        ? "JavaScript"
+        : book.title.toLowerCase().includes("web")
+        ? "Web Development"
+        : "Programming",
+    }));
+  } catch (error) {
+    console.error("Error loading books:", error);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", async function () {
+  const bookData = sessionStorage.getItem("selectedBook");
+
+  if (!bookData) {
+    console.log("No book selected, redirecting...");
+    window.location.href = "books.html";
+    return;
+  }
+
+  const book = JSON.parse(bookData);
+
+  await loadAllBooks();
+
+  displayBookDetails(book);
+
+  document.getElementById("addToCartBtn").addEventListener("click", addToCart);
+  document
+    .getElementById("bookmarkBtn")
+    .addEventListener("click", toggleBookmark);
+
+  document
+    .getElementById("prev-btn")
+    .addEventListener("click", () => navigateBook("prev"));
+  document
+    .getElementById("next-btn")
+    .addEventListener("click", () => navigateBook("next"));
 });
