@@ -33,5 +33,5 @@ signupForm.addEventListener("submit", function (e) {
   localStorage.setItem("users", JSON.stringify(users));
 
   alert("Registration Successful! Please Login.");
-  window.location.href = "profile.html";
+  window.location.href = "login.html";
 });
