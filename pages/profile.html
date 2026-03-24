@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <title>My Profile | Ketabak</title>
+    <meta name="description" content="Manage your Ketabak account, view your wishlist, and checkout your orders." />
+    
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/profile.css" />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -18,102 +18,62 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     />
-
-    <title>My Profile</title>
   </head>
   <body>
-    <header class="header" style="background-color: var(--second-color)">
-      <div class="header-container">
-        <a href="../pages/index.html" class="logo" style="text-decoration: none"
-          >ketabak</a
-        >
-        <div class="header-actions"></div>
-      </div>
-    </header>
 
-    <main class="profile-page">
-      <div class="profile-cover"></div>
+    <main class="profile-page" aria-label="User Profile">
+      <div class="profile-cover" aria-hidden="true"></div>
 
       <div class="profile-container">
-        <aside class="profile-sidebar">
+        <aside class="profile-sidebar" aria-label="Profile Navigation">
           <div class="user-card-box">
             <div class="avatar-container">
               <img
                 src="../images/author.jpg"
-                alt="User Avatar"
+                alt="User Profile Picture"
                 id="userAvatarImg"
               />
-              <button class="edit-avatar-btn">
-                <i class="fas fa-camera"></i>
+              <button class="edit-avatar-btn" aria-label="Change profile picture">
+                <i class="fas fa-camera" aria-hidden="true"></i>
               </button>
             </div>
-            <h2 id="profileFullName">Loading name...</h2>
-            <p id="profileEmail">loading.email@example.com</p>
+            <h1 id="profileFullName">Loading...</h1>
+            <p id="profileEmail">loading@example.com</p>
 
-            <div class="user-actions-menu">
-              <button class="menu-btn active">
-                <i class="fas fa-user"></i> My Account
+            <nav class="user-actions-menu" aria-label="Account Menu">
+              <button class="menu-btn active" id="myAccountBtn" aria-current="page">
+                <i class="fas fa-user" aria-hidden="true"></i> My Account
               </button>
-              <button class="menu-btn">
-                <i class="fas fa-heart"></i> Wishlist
+              <button class="menu-btn" id="viewWishlistBtn">
+                <i class="fas fa-heart" aria-hidden="true"></i> Wishlist
+              </button>
+              <button class="menu-btn" id="viewCheckoutBtn">
+                <i class="fas fa-box" aria-hidden="true"></i> Checkout
               </button>
               <button class="menu-btn logout-action" id="profileLogoutBtn">
-                <i class="fas fa-sign-out-alt"></i> Logout
+                <i class="fas fa-sign-out-alt" aria-hidden="true"></i> Logout
               </button>
-            </div>
+            </nav>
           </div>
         </aside>
 
-        <section class="profile-main-content">
-          <h3 class="content-title">My Wishlist & Saved Books</h3>
+        <div class="profile-content-wrapper" style="flex: 2;">
+          <section id="wishlistSection" class="profile-main-content" aria-labelledby="wishlist-title">
+            <h2 id="wishlist-title" class="content-title">My Wishlist & Saved Books</h2>
+            <div class="wishlist-grid" id="wishlistContainer" aria-live="polite"></div>
+          </section>
 
-          <div class="wishlist-grid">
-            <div class="modern-card">
-              <div class="card-header">
-                <span class="discount-badge">-20%</span>
-              </div>
-              <div class="book-image-container">
-                <img
-                  src="../images/bestsellers/bestseller-1.jpg"
-                  alt="Book 1"
-                  class="book-image"
-                />
-                <div class="book-overlay">
-                  <button class="quick-view-btn">
-                    <i class="fas fa-eye"></i> Quick View
-                  </button>
-                </div>
-              </div>
-              <div class="book-info">
-                <span class="category-tag">Fiction</span>
-                <h4 class="book-title">The Great Gatsby</h4>
-                <div class="rating-container">
-                  <div class="stars">★★★★☆</div>
-                </div>
-                <div class="current-price">$15.99</div>
-              </div>
-            </div>
-
-            <div class="modern-card">
-              <div class="book-image-container">
-                <img
-                  src="../images/bestsellers/bestseller-1.jpg"
-                  alt="Book 2"
-                  class="book-image"
-                />
-              </div>
-              <div class="book-info">
-                <span class="category-tag">Self Help</span>
-                <h4 class="book-title">Atomic Habits</h4>
-                <div class="current-price">$20.00</div>
-              </div>
-            </div>
-          </div>
-        </section>
+          <section id="checkoutSection" class="profile-main-content hidden" aria-labelledby="checkout-title" aria-hidden="true">
+            <h2 id="checkout-title" class="content-title">Secure Checkout</h2>
+            <div class="checkout-grid" id="checkoutContainer" aria-live="polite"></div>
+          </section>
+        </div>
       </div>
     </main>
 
+    <script src="./utils/header.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="./utils/footer.js"></script>
     <script src="../js/profile.js"></script>
-    <script src="../js/main.js"></script>
   </body>
 </html>
