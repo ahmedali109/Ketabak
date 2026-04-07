@@ -101,17 +101,10 @@ function displayBookDetails(book) {
   }
 }
 
-function addToCart() {
+function addToCart(bookId) {
   if (!currentBook) return;
 
-  console.log(`Added "${currentBook.title}" to cart`);
-  showNotification(`"${currentBook.title}" added to cart!`, "success");
-
-  const cartCount = document.querySelector(".cart-count");
-  if (cartCount) {
-    const current = parseInt(cartCount.textContent) || 0;
-    cartCount.textContent = current + 1;
-  }
+  addBookToCart(currentBook.id);
 }
 
 function toggleBookmark() {
@@ -219,21 +212,21 @@ async function loadAllBooks() {
       category: book.title.toLowerCase().includes("python")
         ? "Python"
         : book.title.toLowerCase().includes("machine learning") ||
-          book.title.toLowerCase().includes("ml")
-        ? "Machine Learning"
-        : book.title.toLowerCase().includes("data")
-        ? "Data Science"
-        : book.title.toLowerCase().includes("c++") ||
-          book.title.toLowerCase().includes("c & gui")
-        ? "C/C++"
-        : book.title.toLowerCase().includes("snowflake")
-        ? "Database"
-        : book.title.toLowerCase().includes("javascript") ||
-          book.title.toLowerCase().includes("js")
-        ? "JavaScript"
-        : book.title.toLowerCase().includes("web")
-        ? "Web Development"
-        : "Programming",
+            book.title.toLowerCase().includes("ml")
+          ? "Machine Learning"
+          : book.title.toLowerCase().includes("data")
+            ? "Data Science"
+            : book.title.toLowerCase().includes("c++") ||
+                book.title.toLowerCase().includes("c & gui")
+              ? "C/C++"
+              : book.title.toLowerCase().includes("snowflake")
+                ? "Database"
+                : book.title.toLowerCase().includes("javascript") ||
+                    book.title.toLowerCase().includes("js")
+                  ? "JavaScript"
+                  : book.title.toLowerCase().includes("web")
+                    ? "Web Development"
+                    : "Programming",
     }));
   } catch (error) {
     console.error("Error loading books:", error);
@@ -255,7 +248,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   displayBookDetails(book);
 
-  document.getElementById("addToCartBtn").addEventListener("click", addToCart);
+  document.getElementById("addToCartBtn").addEventListener("click", () => {
+    addBookToCart(currentBook.id);
+  });
   document
     .getElementById("bookmarkBtn")
     .addEventListener("click", toggleBookmark);

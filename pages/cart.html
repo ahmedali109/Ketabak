@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart | Ketabak</title>
+    <meta name="description" content="Review your selected books and proceed to checkout to complete your purchase on Ketabak." />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
+  </head>
+  <body>
+
+    <main class="cart-page" aria-label="Shopping Cart Details">
+      <h1 class="title">Your Shopping Cart</h1>
+    
+      <div class="cart-container">
+        <section id="cart-items" class="cart-items-section" aria-live="polite" aria-label="Items in your cart">
+          </section>
+
+        <aside class="cart-summary" aria-labelledby="summary-title">
+          <h2 id="summary-title">Order Summary</h2>
+          <div class="summary-row">
+            <span>Total:</span>
+            <span id="cart-total" aria-live="polite">$0.00</span>
+          </div>
+          <button class="checkout-btn" onclick="window.location.href='profile.html?tab=checkout'" aria-label="Proceed to checkout">Proceed to Checkout</button>        </aside>
+      </div>
+    </main>
+
+    <script src="./utils/header.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="./utils/footer.js"></script>
+  </body>
+</html>

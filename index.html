@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ketabak | Your Online Bookstore</title>
+    <meta name="description" content="Discover a wide range of books, explore categories, and find your next favorite read at Ketabak." />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -14,424 +16,327 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     />
-    <title>Ketabak</title>
   </head>
   <body>
-    <header class="header">
-      <div class="header-container">
-        <a href="index.html" class="logo">ketabak</a>
-
-        <ul class="nav-links">
-          <li><a href="pages/books.html">Books</a></li>
-          <li><a href="pages/categories.html">Categories</a></li>
-          <li><a href="pages/authors.html">Authors</a></li>
-          <li><a href="pages/about.html">About Us</a></li>
-        </ul>
-
-        <div class="header-actions">
-          <div class="cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count">3</span>
-          </div>
-          <a href="signup.html" class="signup-btn">Sign Up</a>
-          <a href="login.html" class="login-btn">Login</a>
-        </div>
-      </div>
-    </header>
-
-    <!-- Landing Page-->
-    <section class="landing-page">
-      <div class="overlay"></div>
-      <div class="intro-text">
-        <h1>Discover the World of Books with Ketabak</h1>
-        <p>
-          Browse the latest books, explore different categories, and follow your
-          favorite authors with ease.
-        </p>
-        <button class="explore-btn">Explore Now</button>
-      </div>
-    </section>
-
-    <!--  About Us Section-->
-    <section class="about-us" id="about">
-      <div class="about">
-        <h2 class="title">About Ketabak</h2>
-        <p>
-          Ketabak is a platform dedicated to book lovers, offering a seamless
-          experience to discover new books, explore different categories, and
-          stay updated with your favorite authors.
-        </p>
-      </div>
-
-      <div class="mission">
-        <h3 class="title">Our Mission</h3>
-        <p>
-          To inspire and nurture a love for reading by providing an easy-to-use
-          platform with a diverse library of books and personalized
-          recommendations.
-        </p>
-      </div>
-
-      <div class="values">
-        <h3 class="title">Our Values</h3>
-        <ul>
-          <li>Promoting a culture of reading and learning</li>
-          <li>Ensuring easy access to literary content</li>
-          <li>Supporting authors and content creators</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Quote Section  -->
-    <div class="quote-container">
-      <img src="../images/author.jpg" alt="Famous Author" class="author-img" />
-      <div class="quote-box">
-        <p class="quote">
-          "The mystery of human existence lies not in just staying alive, but in
-          finding something to live for."
-        </p>
-        <h4 class="author">— Fyodor Dostoevsky</h4>
-      </div>
-    </div>
-
-    <!-- Bestseller Section-->
-    <div class="carousel-container" id="bestseller">
-      <h1 class="title">Bestseller</h1>
-
-      <div class="bestseller" id="carousel">
-        <!-- Book Card 1 -->
-        <div class="card">
-          <div class="book-image">
-            <img
-              src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop"
-              alt="Book 1"
-            />
-          </div>
-          <div class="book-details">
-            <p>Book 1</p>
-            <p>by: Author 1</p>
-            <div class="rate" data-rating="4">★★★★☆</div>
-          </div>
-        </div>
-
-        <!-- Book Card 2 -->
-        <div class="card">
-          <div class="book-image">
-            <img
-              src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=400&fit=crop"
-              alt="Book 2"
-            />
-          </div>
-          <div class="book-details">
-            <p>Book 2</p>
-            <p>by: Author 2</p>
-            <div class="rate" data-rating="3">★★★☆☆</div>
-          </div>
-        </div>
-
-        <!-- Book Card 3 -->
-        <div class="card">
-          <div class="book-image">
-            <img
-              src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&h=400&fit=crop"
-              alt="Book 3"
-            />
-          </div>
-          <div class="book-details">
-            <p>Book 3</p>
-            <p>by: Author 3</p>
-            <div class="rate" data-rating="5">★★★★★</div>
-          </div>
-        </div>
-
-        <!-- Book Card 4 -->
-        <div class="card">
-          <div class="book-image">
-            <img
-              src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=400&fit=crop"
-              alt="Book 4"
-            />
-          </div>
-          <div class="book-details">
-            <p>Book 4</p>
-            <p>by: Author 4</p>
-            <div class="rate" data-rating="4">★★★★☆</div>
-          </div>
-        </div>
-
-        <!-- Book Card 5 -->
-        <div class="card">
-          <div class="book-image">
-            <img
-              src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300&h=400&fit=crop"
-              alt="Book 5"
-            />
-          </div>
-          <div class="book-details">
-            <p>Book 5</p>
-            <p>by: Author 5</p>
-            <div class="rate" data-rating="4">★★★★☆</div>
-          </div>
-        </div>
-
-        <!-- Book Card 6 -->
-        <div class="card">
-          <div class="book-image">
-            <img
-              src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=300&h=400&fit=crop"
-              alt="Book 6"
-            />
-          </div>
-          <div class="book-details">
-            <p>Book 6</p>
-            <p>by: Author 6</p>
-            <div class="rate" data-rating="5">★★★★★</div>
-          </div>
-        </div>
-
-        <!-- Book Card 7 -->
-        <div class="card">
-          <div class="book-image">
-            <img
-              src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=300&h=400&fit=crop"
-              alt="Book 7"
-            />
-          </div>
-          <div class="book-details">
-            <p>Book 7</p>
-            <p>by: Author 7</p>
-            <div class="rate" data-rating="4">★★★★☆</div>
-          </div>
-        </div>
-
-        <!-- Book Card 8 -->
-        <div class="card">
-          <div class="book-image">
-            <img
-              src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=300&h=400&fit=crop"
-              alt="Book 8"
-            />
-          </div>
-          <div class="book-details">
-            <p>Book 8</p>
-            <p>by: Author 8</p>
-            <div class="rate" data-rating="3">★★★☆☆</div>
-          </div>
-        </div>
-
-        <!-- Book Card 9 -->
-        <div class="card">
-          <div class="book-image">
-            <img
-              src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=300&h=400&fit=crop"
-              alt="Book 9"
-            />
-          </div>
-          <div class="book-details">
-            <p>Book 9</p>
-            <p>by: Author 9</p>
-            <div class="rate" data-rating="5">★★★★★</div>
-          </div>
-        </div>
-
-        <!-- Book Card 10 -->
-        <div class="card">
-          <div class="book-image">
-            <img
-              src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&h=400&fit=crop"
-              alt="Book 10"
-            />
-          </div>
-          <div class="book-details">
-            <p>Book 10</p>
-            <p>by: Author 10</p>
-            <div class="rate" data-rating="4">★★★★☆</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carousel Arrows -->
-      <button class="arrow left">❮</button>
-      <button class="arrow right">❯</button>
-    </div>
-
-    <!-- Featured Categories Section -->
-    <section class="featured-categories" id="categories">
-      <h2 class="title">Explore Categories</h2>
-      <div class="categories-grid">
-        <div class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-magic"></i>
-          </div>
-          <h3>Fiction</h3>
-          <p>Dive into imaginative worlds</p>
-          <span class="books-count">2,450+ Books</span>
-        </div>
-
-        <div class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-flask"></i>
-          </div>
-          <h3>Science</h3>
-          <p>Explore the wonders of knowledge</p>
-          <span class="books-count">1,820+ Books</span>
-        </div>
-
-        <div class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-landmark"></i>
-          </div>
-          <h3>History</h3>
-          <p>Journey through time</p>
-          <span class="books-count">1,350+ Books</span>
-        </div>
-
-        <div class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-heart"></i>
-          </div>
-          <h3>Romance</h3>
-          <p>Stories of love and passion</p>
-          <span class="books-count">1,680+ Books</span>
-        </div>
-
-        <div class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-book-reader"></i>
-          </div>
-          <h3>Self-Help</h3>
-          <p>Transform your life</p>
-          <span class="books-count">980+ Books</span>
-        </div>
-
-        <div class="category-card">
-          <div class="category-icon">
-            <i class="fas fa-theater-masks"></i>
-          </div>
-          <h3>Drama</h3>
-          <p>Powerful narratives</p>
-          <span class="books-count">1,120+ Books</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-      <div class="newsletter-container">
-        <div class="newsletter-content">
-          <i class="fas fa-envelope-open-text"></i>
-          <h2>Subscribe to Our Newsletter</h2>
+    
+    <main>
+      <section class="landing-page" aria-labelledby="hero-title">
+        <div class="overlay" aria-hidden="true"></div>
+        <div class="intro-text">
+          <h1 id="hero-title">Discover the World of Books with Ketabak</h1>
           <p>
-            Get the latest updates on new releases, exclusive offers, and
-            reading recommendations delivered to your inbox.
+            Browse the latest books, explore different categories, and follow your
+            favorite authors with ease.
           </p>
+          <a href="pages/books.html" class="explore-btn" role="button" style="text-decoration: none; display: inline-block;">Explore Now</a>
+        </div>
+      </section>
 
-          <form class="newsletter-form">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              class="newsletter-input"
-              required
-            />
-            <button type="submit" class="newsletter-btn">
-              <span>Subscribe</span>
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </form>
+      <section class="about-us" id="about" aria-labelledby="about-title">
+        <div class="about">
+          <h2 id="about-title" class="title">About Ketabak</h2>
+          <p>
+            Ketabak is a platform dedicated to book lovers, offering a seamless
+            experience to discover new books, explore different categories, and
+            stay updated with your favorite authors.
+          </p>
+        </div>
 
-          <div class="newsletter-stats">
-            <div class="stat-item">
-              <i class="fas fa-users"></i>
-              <span>50K+ Subscribers</span>
+        <div class="mission">
+          <h3 class="title">Our Mission</h3>
+          <p>
+            To inspire and nurture a love for reading by providing an easy-to-use
+            platform with a diverse library of books and personalized
+            recommendations.
+          </p>
+        </div>
+
+        <div class="values">
+          <h3 class="title">Our Values</h3>
+          <ul>
+            <li>Promoting a culture of reading and learning</li>
+            <li>Ensuring easy access to literary content</li>
+            <li>Supporting authors and content creators</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="quote-container" aria-label="Author Quote">
+        <img src="./images/author.jpg" alt="Portrait of Fyodor Dostoevsky" class="author-img" loading="lazy" />
+        <blockquote class="quote-box">
+          <p class="quote">
+            "The mystery of human existence lies not in just staying alive, but in
+            finding something to live for."
+          </p>
+          <footer class="author">— Fyodor Dostoevsky</footer>
+        </blockquote>
+      </section>
+
+      <section class="carousel-container" id="bestseller" aria-labelledby="bestseller-title">
+        <h2 id="bestseller-title" class="title">Bestsellers</h2>
+
+        <div class="bestseller" id="carousel" role="region" aria-label="Bestselling books carousel" tabindex="0">
+          <article class="card">
+            <div class="book-image">
+              <img
+                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop"
+                alt="Cover of Book 1"
+                loading="lazy"
+              />
             </div>
-            <div class="stat-item">
-              <i class="fas fa-star"></i>
-              <span>Weekly Updates</span>
+            <div class="book-details">
+              <h3>Book 1</h3>
+              <p>by: Author 1</p>
+              <div class="rate" data-rating="4" aria-label="Rating: 4 out of 5 stars">★★★★☆</div>
             </div>
-            <div class="stat-item">
-              <i class="fas fa-lock"></i>
-              <span>Privacy Protected</span>
+          </article>
+
+          <article class="card">
+            <div class="book-image">
+              <img
+                src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=400&fit=crop"
+                alt="Cover of Book 2"
+                loading="lazy"
+              />
+            </div>
+            <div class="book-details">
+              <h3>Book 2</h3>
+              <p>by: Author 2</p>
+              <div class="rate" data-rating="3" aria-label="Rating: 3 out of 5 stars">★★★☆☆</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="book-image">
+              <img
+                src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&h=400&fit=crop"
+                alt="Cover of Book 3"
+                loading="lazy"
+              />
+            </div>
+            <div class="book-details">
+              <h3>Book 3</h3>
+              <p>by: Author 3</p>
+              <div class="rate" data-rating="5" aria-label="Rating: 5 out of 5 stars">★★★★★</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="book-image">
+              <img
+                src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=400&fit=crop"
+                alt="Cover of Book 4"
+                loading="lazy"
+              />
+            </div>
+            <div class="book-details">
+              <h3>Book 4</h3>
+              <p>by: Author 4</p>
+              <div class="rate" data-rating="4" aria-label="Rating: 4 out of 5 stars">★★★★☆</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="book-image">
+              <img
+                src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=300&h=400&fit=crop"
+                alt="Cover of Book 5"
+                loading="lazy"
+              />
+            </div>
+            <div class="book-details">
+              <h3>Book 5</h3>
+              <p>by: Author 5</p>
+              <div class="rate" data-rating="4" aria-label="Rating: 4 out of 5 stars">★★★★☆</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="book-image">
+              <img
+                src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=300&h=400&fit=crop"
+                alt="Cover of Book 6"
+                loading="lazy"
+              />
+            </div>
+            <div class="book-details">
+              <h3>Book 6</h3>
+              <p>by: Author 6</p>
+              <div class="rate" data-rating="5" aria-label="Rating: 5 out of 5 stars">★★★★★</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="book-image">
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=300&h=400&fit=crop"
+                alt="Cover of Book 7"
+                loading="lazy"
+              />
+            </div>
+            <div class="book-details">
+              <h3>Book 7</h3>
+              <p>by: Author 7</p>
+              <div class="rate" data-rating="4" aria-label="Rating: 4 out of 5 stars">★★★★☆</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="book-image">
+              <img
+                src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=300&h=400&fit=crop"
+                alt="Cover of Book 8"
+                loading="lazy"
+              />
+            </div>
+            <div class="book-details">
+              <h3>Book 8</h3>
+              <p>by: Author 8</p>
+              <div class="rate" data-rating="3" aria-label="Rating: 3 out of 5 stars">★★★☆☆</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="book-image">
+              <img
+                src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=300&h=400&fit=crop"
+                alt="Cover of Book 9"
+                loading="lazy"
+              />
+            </div>
+            <div class="book-details">
+              <h3>Book 9</h3>
+              <p>by: Author 9</p>
+              <div class="rate" data-rating="5" aria-label="Rating: 5 out of 5 stars">★★★★★</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="book-image">
+              <img
+                src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=300&h=400&fit=crop"
+                alt="Cover of Book 10"
+                loading="lazy"
+              />
+            </div>
+            <div class="book-details">
+              <h3>Book 10</h3>
+              <p>by: Author 10</p>
+              <div class="rate" data-rating="4" aria-label="Rating: 4 out of 5 stars">★★★★☆</div>
+            </div>
+          </article>
+        </div>
+
+        <button class="arrow left" aria-label="Scroll left" aria-controls="carousel">❮</button>
+        <button class="arrow right" aria-label="Scroll right" aria-controls="carousel">❯</button>
+      </section>
+
+      <section class="featured-categories" id="categories" aria-labelledby="explore-categories">
+        <h2 id="explore-categories" class="title">Explore Categories</h2>
+        <div class="categories-grid">
+          <a href="pages/categories.html" class="category-card" style="text-decoration: none; color: inherit;">
+            <div class="category-icon" aria-hidden="true">
+              <i class="fas fa-magic"></i>
+            </div>
+            <h3>Fiction</h3>
+            <p>Dive into imaginative worlds</p>
+            <span class="books-count">2,450+ Books</span>
+          </a>
+
+          <a href="pages/categories.html" class="category-card" style="text-decoration: none; color: inherit;">
+            <div class="category-icon" aria-hidden="true">
+              <i class="fas fa-flask"></i>
+            </div>
+            <h3>Science</h3>
+            <p>Explore the wonders of knowledge</p>
+            <span class="books-count">1,820+ Books</span>
+          </a>
+
+          <a href="pages/categories.html" class="category-card" style="text-decoration: none; color: inherit;">
+            <div class="category-icon" aria-hidden="true">
+              <i class="fas fa-landmark"></i>
+            </div>
+            <h3>History</h3>
+            <p>Journey through time</p>
+            <span class="books-count">1,350+ Books</span>
+          </a>
+
+          <a href="pages/categories.html" class="category-card" style="text-decoration: none; color: inherit;">
+            <div class="category-icon" aria-hidden="true">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Romance</h3>
+            <p>Stories of love and passion</p>
+            <span class="books-count">1,680+ Books</span>
+          </a>
+
+          <a href="pages/categories.html" class="category-card" style="text-decoration: none; color: inherit;">
+            <div class="category-icon" aria-hidden="true">
+              <i class="fas fa-book-reader"></i>
+            </div>
+            <h3>Self-Help</h3>
+            <p>Transform your life</p>
+            <span class="books-count">980+ Books</span>
+          </a>
+
+          <a href="pages/categories.html" class="category-card" style="text-decoration: none; color: inherit;">
+            <div class="category-icon" aria-hidden="true">
+              <i class="fas fa-theater-masks"></i>
+            </div>
+            <h3>Drama</h3>
+            <p>Powerful narratives</p>
+            <span class="books-count">1,120+ Books</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="newsletter-section" aria-labelledby="newsletter-title">
+        <div class="newsletter-container">
+          <div class="newsletter-content">
+            <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
+            <h2 id="newsletter-title">Subscribe to Our Newsletter</h2>
+            <p>
+              Get the latest updates on new releases, exclusive offers, and
+              reading recommendations delivered to your inbox.
+            </p>
+
+            <form class="newsletter-form" aria-label="Newsletter Subscription">
+              <label for="newsletter-email" class="visually-hidden">Email Address</label>
+              <input
+                type="email"
+                id="newsletter-email"
+                placeholder="Enter your email address"
+                class="newsletter-input"
+                required
+              />
+              <button type="submit" class="newsletter-btn">
+                <span>Subscribe</span>
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              </button>
+            </form>
+
+            <div class="newsletter-stats" aria-label="Newsletter Statistics">
+              <div class="stat-item">
+                <i class="fas fa-users" aria-hidden="true"></i>
+                <span>50K+ Subscribers</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-star" aria-hidden="true"></i>
+                <span>Weekly Updates</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-lock" aria-hidden="true"></i>
+                <span>Privacy Protected</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-section">
-          <h3 class="footer-logo">ketabak</h3>
-          <p class="footer-description">
-            Your gateway to a world of knowledge and imagination. Discover,
-            read, and transform your life one book at a time.
-          </p>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="#" aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-          </div>
-        </div>
-
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#books">All Books</a></li>
-            <li><a href="#categories">Categories</a></li>
-            <li><a href="#authors">Authors</a></li>
-            <li><a href="#bestseller">Bestsellers</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Returns Policy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="pages/about.html">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Contact Info</h4>
-          <ul class="contact-info">
-            <li><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</li>
-            <li><i class="fas fa-phone"></i> +20 123 456 7890</li>
-            <li><i class="fas fa-envelope"></i> info@ketabak.com</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2024 Ketabak. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <span>|</span>
-          <a href="#">Terms of Service</a>
-          <span>|</span>
-          <a href="#">Cookie Policy</a>
-        </div>
-      </div>
-    </footer>
-
+    <script src="./pages/utils/header.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./pages/utils/footer.js"></script>
     <script>
       const carousel = document.getElementById("carousel");
       const leftArrow = document.querySelector(".arrow.left");
@@ -447,8 +352,6 @@
         });
       }
     </script>
-
     <script src="./js/main.js"></script>
-    <script src="./js/header.js"></script>
   </body>
 </html>

@@ -3,255 +3,168 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Discover the legendary authors behind our book collection, including Ernest Hemingway, George Orwell, and more." />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <title>Authors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+    <title>Authors | Ketabak</title>
     <link rel="stylesheet" href="../css/authors.css" />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="header-container">
-        <a href="../index.html" class="logo">ketabak</a>
 
-        <ul class="nav-links">
-          <li><a href="books.html">Books</a></li>
-          <li><a href="categories.html">Categories</a></li>
-          <li><a href="authors.html">Authors</a></li>
-          <li><a href="about.html">About Us</a></li>
-        </ul>
+    <main id="main-content">
+      <div class="container">
+        <h1 class="page-title">Our Authors</h1>
 
-        <div class="header-actions">
-          <div class="cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count">3</span>
-          </div>
-          <a href="signup.html" class="signup-btn">Sign Up</a>
-          <a href="login.html" class="login-btn">Login</a>
+        <div class="authors-list">
+          <article class="author-card" aria-labelledby="author-hemingway">
+            <div class="author-content">
+              <h2 id="author-hemingway" class="author-name">Ernest Hemingway</h2>
+              <p class="author-bio">
+                American novelist and Nobel Prize winner known for his distinctive
+                writing style. His works include "The Old Man and the Sea", "A
+                Farewell to Arms", and "For Whom the Bell Tolls". His minimalist
+                prose revolutionized modern literature.
+              </p>
+              <div class="author-stats" aria-label="Statistics for Ernest Hemingway">
+                <span><strong>7</strong> Novels</span>
+                <span><strong>Nobel Prize</strong> 1954</span>
+              </div>
+            </div>
+            <div class="author-image">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop"
+                alt="Portrait of Ernest Hemingway"
+                loading="lazy"
+              />
+            </div>
+          </article>
+
+          <article class="author-card reverse" aria-labelledby="author-orwell">
+            <div class="author-image">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop"
+                alt="Portrait of George Orwell"
+                loading="lazy"
+              />
+            </div>
+            <div class="author-content">
+              <h2 id="author-orwell" class="author-name">George Orwell</h2>
+              <p class="author-bio">
+                English novelist and essayist famous for his dystopian
+                masterpieces "1984" and "Animal Farm". His works explore themes of
+                totalitarianism, social injustice, and the dangers of political
+                manipulation. A powerful voice of the 20th century.
+              </p>
+              <div class="author-stats" aria-label="Statistics for George Orwell">
+                <span><strong>6</strong> Novels</span>
+                <span><strong>Numerous</strong> Essays</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="author-card" aria-labelledby="author-fitzgerald">
+            <div class="author-content">
+              <h2 id="author-fitzgerald" class="author-name">F. Scott Fitzgerald</h2>
+              <p class="author-bio">
+                Iconic American author of the Jazz Age, best known for "The Great
+                Gatsby". His novels capture the glamour and disillusionment of
+                1920s America. Considered one of the greatest American writers of
+                the 20th century.
+              </p>
+              <div class="author-stats" aria-label="Statistics for F. Scott Fitzgerald">
+                <span><strong>4</strong> Novels</span>
+                <span><strong>164</strong> Short Stories</span>
+              </div>
+            </div>
+            <div class="author-image">
+              <img
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop"
+                alt="Portrait of F. Scott Fitzgerald"
+                loading="lazy"
+              />
+            </div>
+          </article>
+
+          <article class="author-card reverse" aria-labelledby="author-tolkien">
+            <div class="author-image">
+              <img
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop"
+                alt="Portrait of J.R.R. Tolkien"
+                loading="lazy"
+              />
+            </div>
+            <div class="author-content">
+              <h2 id="author-tolkien" class="author-name">J.R.R. Tolkien</h2>
+              <p class="author-bio">
+                British author and philologist who created Middle-earth. His epic
+                fantasy works "The Hobbit" and "The Lord of the Rings" trilogy
+                redefined the fantasy genre and inspired countless writers and
+                filmmakers worldwide.
+              </p>
+              <div class="author-stats" aria-label="Statistics for J.R.R. Tolkien">
+                <span><strong>25+</strong> Books</span>
+                <span><strong>Father of</strong> Modern Fantasy</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="author-card" aria-labelledby="author-king">
+            <div class="author-content">
+              <h2 id="author-king" class="author-name">Stephen King</h2>
+              <p class="author-bio">
+                Master of horror and suspense with over 60 novels to his name. His
+                iconic works include "The Shining", "It", and "The Stand". Known
+                as the King of Horror, his stories blend supernatural elements
+                with deep human emotions.
+              </p>
+              <div class="author-stats" aria-label="Statistics for Stephen King">
+                <span><strong>60+</strong> Novels</span>
+                <span><strong>200+</strong> Short Stories</span>
+              </div>
+            </div>
+            <div class="author-image">
+              <img
+                src="https://images.unsplash.com/photo-1557862921-37829c790f19?w=400&h=400&fit=crop"
+                alt="Portrait of Stephen King"
+                loading="lazy"
+              />
+            </div>
+          </article>
+
+          <article class="author-card reverse" aria-labelledby="author-shakespeare">
+            <div class="author-image">
+              <img
+                src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=400&fit=crop"
+                alt="Portrait of William Shakespeare"
+                loading="lazy"
+              />
+            </div>
+            <div class="author-content">
+              <h2 id="author-shakespeare" class="author-name">William Shakespeare</h2>
+              <p class="author-bio">
+                The greatest playwright in English literature. His timeless works
+                include "Romeo and Juliet", "Hamlet", and "Macbeth". His profound
+                understanding of human nature continues to resonate with audiences
+                400 years later.
+              </p>
+              <div class="author-stats" aria-label="Statistics for William Shakespeare">
+                <span><strong>39</strong> Plays</span>
+                <span><strong>154</strong> Sonnets</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
-    </header>
+    </main>
 
-    <div class="container">
-      <h1 class="page-title">Our Authors</h1>
-
-      <div class="authors-list">
-        <!-- Author Card 1 - Image Right, Text Left -->
-        <div class="author-card">
-          <div class="author-content">
-            <h2 class="author-name">Ernest Hemingway</h2>
-            <p class="author-bio">
-              American novelist and Nobel Prize winner known for his distinctive
-              writing style. His works include "The Old Man and the Sea", "A
-              Farewell to Arms", and "For Whom the Bell Tolls". His minimalist
-              prose revolutionized modern literature.
-            </p>
-            <div class="author-stats">
-              <span><strong>7</strong> Novels</span>
-              <span><strong>Nobel Prize</strong> 1954</span>
-            </div>
-          </div>
-          <div class="author-image">
-            <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop"
-              alt="Ernest Hemingway"
-            />
-          </div>
-        </div>
-
-        <!-- Author Card 2 - Image Left, Text Right -->
-        <div class="author-card reverse">
-          <div class="author-image">
-            <img
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop"
-              alt="George Orwell"
-            />
-          </div>
-          <div class="author-content">
-            <h2 class="author-name">George Orwell</h2>
-            <p class="author-bio">
-              English novelist and essayist famous for his dystopian
-              masterpieces "1984" and "Animal Farm". His works explore themes of
-              totalitarianism, social injustice, and the dangers of political
-              manipulation. A powerful voice of the 20th century.
-            </p>
-            <div class="author-stats">
-              <span><strong>6</strong> Novels</span>
-              <span><strong>Numerous</strong> Essays</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Author Card 3 - Image Right, Text Left -->
-        <div class="author-card">
-          <div class="author-content">
-            <h2 class="author-name">F. Scott Fitzgerald</h2>
-            <p class="author-bio">
-              Iconic American author of the Jazz Age, best known for "The Great
-              Gatsby". His novels capture the glamour and disillusionment of
-              1920s America. Considered one of the greatest American writers of
-              the 20th century.
-            </p>
-            <div class="author-stats">
-              <span><strong>4</strong> Novels</span>
-              <span><strong>164</strong> Short Stories</span>
-            </div>
-          </div>
-          <div class="author-image">
-            <img
-              src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop"
-              alt="F. Scott Fitzgerald"
-            />
-          </div>
-        </div>
-
-        <!-- Author Card 4 - Image Left, Text Right -->
-        <div class="author-card reverse">
-          <div class="author-image">
-            <img
-              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop"
-              alt="J.R.R. Tolkien"
-            />
-          </div>
-          <div class="author-content">
-            <h2 class="author-name">J.R.R. Tolkien</h2>
-            <p class="author-bio">
-              British author and philologist who created Middle-earth. His epic
-              fantasy works "The Hobbit" and "The Lord of the Rings" trilogy
-              redefined the fantasy genre and inspired countless writers and
-              filmmakers worldwide.
-            </p>
-            <div class="author-stats">
-              <span><strong>25+</strong> Books</span>
-              <span><strong>Father of</strong> Modern Fantasy</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Author Card 5 - Image Right, Text Left -->
-        <div class="author-card">
-          <div class="author-content">
-            <h2 class="author-name">Stephen King</h2>
-            <p class="author-bio">
-              Master of horror and suspense with over 60 novels to his name. His
-              iconic works include "The Shining", "It", and "The Stand". Known
-              as the King of Horror, his stories blend supernatural elements
-              with deep human emotions.
-            </p>
-            <div class="author-stats">
-              <span><strong>60+</strong> Novels</span>
-              <span><strong>200+</strong> Short Stories</span>
-            </div>
-          </div>
-          <div class="author-image">
-            <img
-              src="https://images.unsplash.com/photo-1557862921-37829c790f19?w=400&h=400&fit=crop"
-              alt="Stephen King"
-            />
-          </div>
-        </div>
-
-        <!-- Author Card 6 - Image Left, Text Right -->
-        <div class="author-card reverse">
-          <div class="author-image">
-            <img
-              src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=400&fit=crop"
-              alt="William Shakespeare"
-            />
-          </div>
-          <div class="author-content">
-            <h2 class="author-name">William Shakespeare</h2>
-            <p class="author-bio">
-              The greatest playwright in English literature. His timeless works
-              include "Romeo and Juliet", "Hamlet", and "Macbeth". His profound
-              understanding of human nature continues to resonate with audiences
-              400 years later.
-            </p>
-            <div class="author-stats">
-              <span><strong>39</strong> Plays</span>
-              <span><strong>154</strong> Sonnets</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-section">
-          <h3 class="footer-logo">ketabak</h3>
-          <p class="footer-description">
-            Your gateway to a world of knowledge and imagination. Discover,
-            read, and transform your life one book at a time.
-          </p>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="#" aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-          </div>
-        </div>
-
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#books">All Books</a></li>
-            <li><a href="#categories">Categories</a></li>
-            <li><a href="#authors">Authors</a></li>
-            <li><a href="#bestseller">Bestsellers</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Returns Policy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="pages/about.html">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Contact Info</h4>
-          <ul class="contact-info">
-            <li><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</li>
-            <li><i class="fas fa-phone"></i> +20 123 456 7890</li>
-            <li><i class="fas fa-envelope"></i> info@ketabak.com</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2024 Ketabak. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <span>|</span>
-          <a href="#">Terms of Service</a>
-          <span>|</span>
-          <a href="#">Cookie Policy</a>
-        </div>
-      </div>
-    </footer>
-    <script src="../js/header.js"></script>
+    <script src="./utils/header.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="./utils/footer.js"></script>
   </body>
 </html>

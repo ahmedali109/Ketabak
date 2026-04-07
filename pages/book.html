@@ -4,70 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book Details | Ketabak</title>
+    <meta name="description" content="View detailed information about this book, read the description, check availability, and add it to your cart." />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/book.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="header-container">
-        <a href="index.html" class="logo">ketabak</a>
-
-        <ul class="nav-links">
-          <li><a href="books.html">Books</a></li>
-          <li><a href="categories.html">Categories</a></li>
-          <li><a href="authors.html">Authors</a></li>
-          <li><a href="about.html">About Us</a></li>
-        </ul>
-
-        <div class="header-actions">
-          <div class="cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count">3</span>
-          </div>
-          <a href="signup.html" class="signup-btn">Sign Up</a>
-          <a href="login.html" class="login-btn">Login</a>
-        </div>
-      </div>
-    </header>
-
-    <div class="book-section">
+    
+    <main class="book-section" aria-label="Book details">
       <div class="book-hero">
         <div class="book-cover-container">
-          <img id="book-cover" src="" alt="Book Cover" class="book-cover" />
-          <div class="cover-nav">
-            <button class="nav-btn up" id="prev-btn" title="Previous Book">
-              <i class="fa-solid fa-chevron-up"></i>
+          <img id="book-cover" src="../images/placeholder.jpg" alt="Book Cover" class="book-cover" />
+          <nav class="cover-nav" aria-label="Book navigation">
+            <button class="nav-btn up" id="prev-btn" title="Previous Book" aria-label="Go to previous book">
+              <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
             </button>
-            <button class="nav-btn down" id="next-btn" title="Next Book">
-              <i class="fa-solid fa-chevron-down"></i>
+            <button class="nav-btn down" id="next-btn" title="Next Book" aria-label="Go to next book">
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
             </button>
-          </div>
+          </nav>
         </div>
 
         <div class="book-info-header">
-          <div class="badges">
-            <span class="stock-badge" id="stock-badge">Checking...</span>
+          <div class="badges" aria-live="polite">
+            <span class="stock-badge" id="stock-badge">Loading...</span>
           </div>
           <h1 id="book-title">Loading Title...</h1>
           <h3 class="author">By: <span id="book-author">...</span></h3>
           <p class="subtitle-text" id="book-subtitle">Loading subtitle...</p>
 
-          <div class="rating-display" id="stars-container"></div>
+          <div class="rating-display" id="stars-container" aria-label="Book rating"></div>
 
           <div class="action-buttons">
             <button class="btn-primary" id="addToCartBtn">
               Add to Cart - <span id="book-price">$0.00</span>
             </button>
             <div class="icon-actions">
-              <button class="btn-icon" id="bookmarkBtn" title="Wishlist">
-                <i class="fa-regular fa-bookmark"></i>
+              <button class="btn-icon" id="bookmarkBtn" title="Wishlist" aria-label="Add to wishlist">
+                <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
               </button>
-              <button class="btn-icon" title="Share">
-                <i class="fa-solid fa-share-nodes"></i>
+              <button class="btn-icon" title="Share" aria-label="Share this book">
+                <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
               </button>
             </div>
           </div>
@@ -76,113 +60,40 @@
 
       <div class="details-card">
         <div class="grid-layout">
-          <div class="grid-item description">
-            <h4>Description</h4>
+          <section class="grid-item description" aria-labelledby="desc-heading">
+            <h4 id="desc-heading">Description</h4>
             <p id="book-desc-main">Loading description...</p>
 
             <div class="publisher-info">
               <strong>Publisher:</strong>
-              <span id="book-publisher">...</span> (<span id="book-year"
-                >...</span
-              >)
+              <span id="book-publisher">...</span> (<span id="book-year">...</span>)
             </div>
-          </div>
+          </section>
 
-          <div class="grid-item meta-data">
+          <section class="grid-item meta-data" aria-labelledby="meta-heading">
+            <h4 class="visually-hidden" id="meta-heading">Additional Information</h4>
             <div class="meta-group">
               <h4>ISBN-13</h4>
               <p class="isbn" id="book-isbn">...</p>
             </div>
             <div class="meta-group">
               <h4>Availability</h4>
-              <p id="book-stock">Checking...</p>
+              <p id="book-stock" aria-live="polite">Checking...</p>
             </div>
             <div class="meta-group">
               <h4>External Link</h4>
-              <a href="#" id="book-url" target="_blank" class="external-link"
-                >View on Store <i class="fas fa-external-link-alt"></i
-              ></a>
+              <a href="#" id="book-url" target="_blank" class="external-link" rel="noopener noreferrer" style="display: none;">
+                View on Store <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+              </a>
             </div>
-          </div>
+          </section>
         </div>
       </div>
-    </div>
+    </main>
 
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-section">
-          <h3 class="footer-logo">ketabak</h3>
-          <p class="footer-description">
-            Your gateway to a world of knowledge and imagination. Discover,
-            read, and transform your life one book at a time.
-          </p>
-          <div class="social-links">
-            <a href="#" aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="#" aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-          </div>
-        </div>
-
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#books">All Books</a></li>
-            <li><a href="#categories">Categories</a></li>
-            <li><a href="#authors">Authors</a></li>
-            <li><a href="#bestseller">Bestsellers</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Shipping Info</a></li>
-            <li><a href="#">Returns Policy</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="pages/about.html">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-section">
-          <h4>Contact Info</h4>
-          <ul class="contact-info">
-            <li><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</li>
-            <li><i class="fas fa-phone"></i> +20 123 456 7890</li>
-            <li><i class="fas fa-envelope"></i> info@ketabak.com</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2024 Ketabak. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <span>|</span>
-          <a href="#">Terms of Service</a>
-          <span>|</span>
-          <a href="#">Cookie Policy</a>
-        </div>
-      </div>
-    </footer>
-
-    <script src="../js/book.js" defer></script>
-    <script src="../js/header.js"></script>
+    <script src="./utils/header.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/book.js"></script>
+    <script src="./utils/footer.js"></script>
   </body>
 </html>
